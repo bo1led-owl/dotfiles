@@ -6,7 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' frequency 3
 
-plugins=(zsh-autosuggestions fast-syntax-highlighting)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
 # Start Oh My Zsh
 source $ZSH/oh-my-zsh.sh
