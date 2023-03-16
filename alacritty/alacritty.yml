@@ -50,7 +50,7 @@ font:
     family: FiraCode Nerd Font
     style: Bold Italic
 
-  size: 14
+  size: 13
 
 colors:
     primary:
