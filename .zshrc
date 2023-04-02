@@ -16,6 +16,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Init starship
 eval "$(starship init zsh)"
+
 # Init zellij
 if [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
