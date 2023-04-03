@@ -2,16 +2,14 @@ keybinds clear-defaults=true {
     normal {
         bind "Ctrl p" { SwitchToMode "pane"; }
 
-        bind "Alt n" { NewPane; }
-        bind "Alt c" { CloseFocus; }
+        bind "Alt [" { NewPane "Down"; }
+        bind "Alt ]" { NewPane "Right"; }
+        bind "Alt ;" { CloseFocus; }
 
-        bind "Alt h" "Alt Left" { MoveFocus "Left"; }
-        bind "Alt l" "Alt Right" { MoveFocus "Right"; }
-        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
-        
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
+        bind "Alt h" { MoveFocus "Left"; }
+        bind "Alt l" { MoveFocus "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
         
         bind "Alt +" "Alt =" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; } 
@@ -29,18 +27,19 @@ keybinds clear-defaults=true {
     pane {
         bind "Ctrl n" { SwitchToMode "Normal"; }
         
-        bind "n" { NewPane; }
-        bind "c" { CloseFocus; }
+        bind "[" { NewPane "Down"; }
+        bind "]" { NewPane "Right"; }
+        bind ";" { CloseFocus; }
 
-        bind "h" "Left" { MoveFocus "Left"; }
-        bind "l" "Right" { MoveFocus "Right"; }
-        bind "j" "Down" { MoveFocus "Down"; }
-        bind "k" "Up" { MoveFocus "Up"; }
+        bind "h" { MoveFocus "Left"; }
+        bind "l" { MoveFocus "Right"; }
+        bind "j" { MoveFocus "Down"; }
+        bind "k" { MoveFocus "Up"; }
         
-        bind "Alt h" "Alt Left" { MovePane "Left"; }
-        bind "Alt l" "Alt Right" { MovePane "Right"; }
-        bind "Alt j" "Alt Down" { MovePane "Down"; }
-        bind "Alt k" "Alt Up" { MovePane "Up"; }
+        bind "Alt h" { MovePane "Left"; }
+        bind "Alt l" { MovePane "Right"; }
+        bind "Alt j" { MovePane "Down"; }
+        bind "Alt k" { MovePane "Up"; }
     }
 }
 
@@ -57,7 +56,7 @@ themes {
         magenta "#b16286"
         cyan "#8ec07c"
         white "#d5c4a1"
-    }
+    } 
     catppuccin_mocha {
         fg "#9399b2"
         bg "#585b70"
@@ -86,10 +85,10 @@ on_force_close "quit"
 // layout_dir "~/.config/zellij/layouts"
 
 // The folder in which Zellij will look for themes
-// theme_dir "/path/to/my/theme_dir"
+// theme_dir "~/.config/zellij/themes"
 
 // Default zellij theme
-theme "catppuccin-mocha"
+theme "catppuccin_mocha"
 
 // Default zellij layout
 default_layout "main"

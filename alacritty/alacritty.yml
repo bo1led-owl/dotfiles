@@ -4,8 +4,8 @@
 #  - /path/to/alacritty.yml
 window:
   dimensions:
-    columns: 150
-    lines: 35
+    columns: 160
+    lines: 40
 
   # Values for `decorations`:
   #     - full: Borders and title bar
