@@ -1,6 +1,7 @@
 return {
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   opt = {
+    background = "dark",
     smarttab = true,
     expandtab = true,
     tabstop = 4,

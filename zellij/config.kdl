@@ -44,20 +44,20 @@ keybinds clear-defaults=true {
 }
 
 themes {
-   default {
-        fg "#f8f8f2"
-        bg "#282a36"
-        black "#1d2021"
-        red "#ff4040"
-        green "#b8bb26"
-        yellow "#fabd2f"
+    gruvbox {
+        bg "#282828"
+        fg "#d4be98"
+        black   "#3c3836"
+        red    "#ea6962"
+        green   "#a9b665"
+        yellow  "#d8a657"
         orange "#ffab7a"
-        blue "#83a598"
-        magenta "#b16286"
-        cyan "#8ec07c"
-        white "#d5c4a1"
+        blue    "#7daea3"
+        magenta "#d3869b"
+        cyan    "#89b482"
+        white   "#d4be98"
     } 
-    catppuccin_mocha {
+    catppuccin-mocha {
         fg "#9399b2"
         bg "#585b70"
         red "#f38ba8"
@@ -88,7 +88,7 @@ on_force_close "quit"
 // theme_dir "~/.config/zellij/themes"
 
 // Default zellij theme
-theme "catppuccin_mocha"
+theme "gruvbox"
 
 // Default zellij layout
 default_layout "main"

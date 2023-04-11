@@ -1,11 +1,11 @@
 return {
-  colorscheme = "catppuccin",
+  colorscheme = "gruvbox",
   plugins = {
     {
-      "catppuccin/nvim",
-      as = "catppuccin",
+      "ellisonleao/gruvbox.nvim",
+      as = "gruvbox",
       config = function()
-        require("catppuccin").setup {}
+        require("gruvbox").setup {}
       end,
     },
   }
