@@ -1,0 +1,9 @@
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "cpp"
+file-types = ["cc", "cpp", "hh", "hpp"]
+indent = { tab-width = 4, unit = " " }
+auto-format = true

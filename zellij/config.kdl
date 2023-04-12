@@ -10,6 +10,11 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocus "Right"; }
         bind "Alt j" { MoveFocus "Down"; }
         bind "Alt k" { MoveFocus "Up"; }
+
+        bind "Alt H" { MovePane "Left"; }
+        bind "Alt J" { MovePane "Right"; }
+        bind "Alt K" { MovePane "Down"; }
+        bind "Alt L" { MovePane "Up"; }
         
         bind "Alt +" "Alt =" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; } 
@@ -23,23 +28,6 @@ keybinds clear-defaults=true {
         bind "Alt p" { CloseTab; }
         bind "Alt i" { GoToPreviousTab; }
         bind "Alt o" { GoToNextTab; }
-    }
-    pane {
-        bind "Ctrl n" { SwitchToMode "Normal"; }
-        
-        bind "[" { NewPane "Down"; }
-        bind "]" { NewPane "Right"; }
-        bind ";" { CloseFocus; }
-
-        bind "h" { MoveFocus "Left"; }
-        bind "l" { MoveFocus "Right"; }
-        bind "j" { MoveFocus "Down"; }
-        bind "k" { MoveFocus "Up"; }
-        
-        bind "Alt h" { MovePane "Left"; }
-        bind "Alt l" { MovePane "Right"; }
-        bind "Alt j" { MovePane "Down"; }
-        bind "Alt k" { MovePane "Up"; }
     }
 }
 
