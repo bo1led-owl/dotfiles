@@ -1,3 +1,5 @@
+# alacritty cursor fix
+export XCURSOR_PATH=${XCURSOR_PATH}:~/.local/share/icons
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -13,9 +15,6 @@ source $ZSH/oh-my-zsh.sh
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#666666"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-# Init starship
-# eval "$(starship init zsh)"
 
 # Init zellij
 if [[ -z "$ZELLIJ" ]]; then

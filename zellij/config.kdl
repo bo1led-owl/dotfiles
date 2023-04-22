@@ -1,7 +1,5 @@
 keybinds clear-defaults=true { 
     normal {
-        bind "Ctrl p" { SwitchToMode "pane"; }
-
         bind "Alt [" { NewPane "Down"; }
         bind "Alt ]" { NewPane "Right"; }
         bind "Alt ;" { CloseFocus; }
