@@ -1,0 +1,7 @@
+font=FiraCode Nerd Font
+background-color=#282828ff
+text-color=#d4be98ff
+anchor=top-center
+border-color=#a9b665ff
+padding=10
+default-timeout=5000

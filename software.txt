@@ -1,0 +1,1 @@
+sway waybar polkit wl-clipboard grim slurp clipman mako fuzzel firefox zsh alacritty helix

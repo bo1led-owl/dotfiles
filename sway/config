@@ -8,8 +8,8 @@ client.focused $highlight $highlight $foreground
 output * bg $wallpaper fill
 
 output eDP-1 mode 1920x1080@59.984Hz
-output eDP-1 pos 0 1080
-output eDP-1 scale 1.1
+output eDP-1 pos 160 1080
+output eDP-1 scale 1.2
 
 output HDMI-A-1 mode 1920x1080@60Hz
 output HDMI-A-1 pos 0 0
@@ -17,12 +17,21 @@ output HDMI-A-1 pos 0 0
 set $terminal alacritty
 set $browser firefox
 set $launcher fuzzel
+set $screenshot exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 focus_follows_mouse no
 
-input * {
+input type:keyboard {
 	xkb_layout us,ru
 	xkb_options grp:alt_shift_toggle
+	xkb_numlock enabled
+}
+
+seat * hide_cursor 5000
+
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
 }
 
 set $mod Mod4
@@ -39,8 +48,20 @@ bindsym --to-code $mod+Return exec $terminal
 bindsym --to-code $mod+w exec $browser
 bindsym --to-code Ctrl+Space exec $launcher
 
-bindsym --to-code $mod+Shift+q kill
+bindsym --to-code --release {
+	# capture the specified screen area to clipboard    
+	Print exec grim -g "$(slurp)" - | wl-copy -t image/png
+	
+	# capture all screens to clipboard    
+	Shift+Print exec grim - | wl-copy -t image/png
+    
+	# capture the focused monitor to clipboard    
+	Shift+Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy -t image/png
+}
+
 bindsym --to-code $mod+Shift+c reload
+
+bindsym --to-code --release $mod+q kill
 
 bindsym --to-code $mod+$left focus left
 bindsym --to-code $mod+$right focus right
@@ -78,27 +99,28 @@ bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-bindsym $mod+b split toggle
-
 bindsym $mod+f fullscreen
 
 bindsym $mod+r mode 'resize'
 mode 'resize' {
     # Resizing keys
     bindsym h resize shrink width 10px
-    bindsym j resize grow height 10px
-    bindsym k resize shrink height 10px
+    bindsym k resize grow height 10px
+    bindsym j resize shrink height 10px
     bindsym l resize grow width 10px
 
     # Return to default mode
     bindsym Escape mode 'default'
 }
 
-bindgesture swipe:3:left workspace prev_on_output
-bindgesture swipe:3:right workspace next_on_output
+bindgesture swipe:3:left workspace next_on_output
+bindgesture swipe:3:right workspace prev_on_output
 
+hide_edge_borders smart
 default_border pixel 2
 gaps inner 8
-gaps outer 4
+gaps outer 8
 
 bar swaybar_command waybar
+exec wl-paste --type text --watch clipman store
+exec mako
