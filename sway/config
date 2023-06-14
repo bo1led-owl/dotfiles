@@ -15,7 +15,6 @@ output HDMI-A-1 mode 1920x1080@60Hz
 output HDMI-A-1 pos 0 0
 
 set $terminal alacritty
-set $browser firefox
 set $launcher fuzzel
 set $screenshot exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
@@ -45,7 +44,6 @@ set $prev i
 set $next o
 
 bindsym --to-code $mod+Return exec $terminal
-bindsym --to-code $mod+w exec $browser
 bindsym --to-code Ctrl+Space exec $launcher
 
 bindsym --to-code --release {
