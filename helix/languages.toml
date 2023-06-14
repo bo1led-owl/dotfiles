@@ -2,6 +2,13 @@
 name = "rust"
 auto-format = true
 
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+
 [[language]]
 name = "cpp"
 indent = { tab-width = 4, unit = "    " }

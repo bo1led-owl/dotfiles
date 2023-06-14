@@ -6,10 +6,15 @@ true-color = true
 cursorline = true
 idle-timeout = 0
 completion-trigger-len = 1
+color-modes = true
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 
+[editor.file-picker]
+hidden = false
+git-ignore = true
+
 [editor.indent-guides]
-render = false
+render = true
 character = "│"
 skip-levels = 1
 
@@ -21,10 +26,6 @@ select = "block"
 [editor.lsp]
 display-messages = true
 display-inlay-hints = true
-
-[editor.file-picker]
-hidden = false
-git-ignore = false
 
 [editor.statusline]
 left = ["mode", "separator", "diagnostics", "file-name", "file-modification-indicator",]
