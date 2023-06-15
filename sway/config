@@ -52,6 +52,8 @@ set $down j
 set $prev i
 set $next o
 
+bindsym XF86PowerOff exec systemctl poweroff -i
+
 bindsym --to-code $mod+Return exec $terminal
 bindsym --to-code Ctrl+Space exec $launcher
 
@@ -146,6 +148,3 @@ exec wl-paste --type text --watch clipman store
 exec mako
 
 exec swaymsg workspace 3
-
-exec spotify
-exec firefox
