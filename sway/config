@@ -1,31 +1,39 @@
+# Colours
 set $foreground #d4be98
 set $background #282828
 set $highlight #a9b665
 set $wallpaper ~/Pictures/Wallpapers/wall_secondary.png
 
-client.focused $highlight $highlight $foreground
+client.focused $highlight $highlight $background
 
 output * bg $wallpaper fill
 
-output eDP-1 mode 1920x1080@59.984Hz
-output eDP-1 pos 160 1080
-output eDP-1 scale 1.2
+# Output
+set $disp1 eDP-1
+set $disp2 HDMI-A-1
 
-output HDMI-A-1 mode 1920x1080@60Hz
-output HDMI-A-1 pos 0 0
+output $disp1 mode 1920x1080@59.984Hz
+output $disp1 pos 160 1080
+output $disp1 scale 1.2
 
+output $disp2 mode 1920x1080@60Hz
+output $disp2 pos 0 0
+
+# Apps
 set $terminal alacritty
 set $launcher fuzzel
 set $screenshot exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
-focus_follows_mouse no
-
+# Input
 input type:keyboard {
 	xkb_layout us,ru
 	xkb_options grp:alt_shift_toggle
 	xkb_numlock enabled
 }
 
+focus_follows_mouse no
+
+# Hide cursor after 5 seconds
 seat * hide_cursor 5000
 
 input type:touchpad {
@@ -33,6 +41,7 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+# Mod4 is logo (Windows) button
 set $mod Mod4
 
 set $left h
@@ -46,6 +55,7 @@ set $next o
 bindsym --to-code $mod+Return exec $terminal
 bindsym --to-code Ctrl+Space exec $launcher
 
+# Screenshot configuration
 bindsym --to-code --release {
 	# capture the specified screen area to clipboard    
 	Print exec grim -g "$(slurp)" - | wl-copy -t image/png
@@ -59,7 +69,7 @@ bindsym --to-code --release {
 
 bindsym --to-code $mod+Shift+c reload
 
-bindsym --to-code --release $mod+q kill
+bindsym --to-code $mod+q kill
 
 bindsym --to-code $mod+$left focus left
 bindsym --to-code $mod+$right focus right
@@ -70,6 +80,10 @@ bindsym --to-code $mod+Shift+$left move left
 bindsym --to-code $mod+Shift+$right move right
 bindsym --to-code $mod+Shift+$up move up
 bindsym --to-code $mod+Shift+$down move down
+
+floating_modifier $mod normal
+bindsym --to-code $mod+Shift+Space floating toggle
+bindsym --to-code $mod+Space focus mode_toggle
 
 bindsym --to-code $mod+$prev workspace prev
 bindsym --to-code $mod+$next workspace next
@@ -101,24 +115,37 @@ bindsym $mod+f fullscreen
 
 bindsym $mod+r mode 'resize'
 mode 'resize' {
-    # Resizing keys
     bindsym h resize shrink width 10px
     bindsym k resize grow height 10px
     bindsym j resize shrink height 10px
     bindsym l resize grow width 10px
 
-    # Return to default mode
     bindsym Escape mode 'default'
 }
 
 bindgesture swipe:3:left workspace next_on_output
 bindgesture swipe:3:right workspace prev_on_output
 
+# Borders and gaps
 hide_edge_borders smart
 default_border pixel 2
 gaps inner 8
 gaps outer 8
 
+workspace 1 output $disp2 $disp1
+workspace 2 output $disp2 $disp1
+workspace 3 output $disp1
+
+assign [class="[Ss]potify"] workspace 1
+assign [app_id=".*telegram.*"] workspace 1
+assign [app_id="firefox"] workspace 2
+
+# Startup applications
 bar swaybar_command waybar
 exec wl-paste --type text --watch clipman store
 exec mako
+
+exec swaymsg workspace 3
+
+exec spotify
+exec firefox
