@@ -1,59 +1,88 @@
  * {
+  all: unset;
+  border: none;
+  min-height: 0;
+  margin: 0;
   font-family: "FiraCode Nerd Font";
-  font-size: 12px;
-  font-weight: 600;
-  background: #282828;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ebdbb2;
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0.25s;
+  transition-property: background-color, background-image;
+}
+
+button {
+  min-height: 24px;
+  min-width: 24px;
+}
+
+window#waybar {
+  background-color: #282828;
+}
+
+.modules-right {
+  margin-right: 5px;
+}
+
+tooltip {
+  background-color: transparent;
+  border: none;
+}
+
+tooltip * {
+  background-color: transparent;
+  border: none;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+tooltip label {
+  background-color: #282828;
   color: #d4be98;
+  margin: 0;
+  padding: 10px;
+  border: solid 2px #d4be98;
 }
 
-#workspaces {
-  margin-right: 8px;
-}
-
-#window,
+#scratchpad,
 #mode,
 #tray,
 #language,
-#battery,
+#network,
 #bluetooth,
-#pulseaudio {
-  margin-left: 6px;
-  margin-right: 6px;
+#pulseaudio,
+#backlight,
+#battery,
+#clock
+{
+  padding: 0 10px;
 }
 
-#battery {
-  margin-right: 10px;
+#scratchpad,
+#mode
+{
+  margin-left: 4px;
+  border-radius: 8px;
 }
 
-#network {
-  margin-left: 8px;
-  margin-right: 10px;
-  margin-bottom: 1px;
-  margin-top: 0px;
+#mode {
+  background-color: #458588;
 }
 
-#pulseaudio {
-  color: #d8a657;
+#tray, #tray * {
+  background-color: #282828;  
+  color: #d4be98;
 }
 
-#network {
-  color: #89b482;
+#network.wifi, #network.disconnected {
+  padding-right: 14px;
 }
 
-#bluetooth {
-  color: #7daea3;
-}
-
-#mode, #battery {
-  color: #a9b665;
-}
-
-#battery.warning {
-  color: #d8a657;
-}
-
-#network.disconnected, #battery.critical {
-  color: #ea6962;
+#network.disabled, #bluetooth.off, #bluetooth.disabled * {
+  margin: 0;
+  padding: 0;
 }
 
 #window {
@@ -61,15 +90,26 @@
 }
 
 #workspaces button {
-  border-radius: 2px;
-  padding: 0;
-  border: 2px solid transparent;
+  padding: 0 2px;
+  border: none;
 }
 
-#workspaces button:hover, #tags button:hover {
-  background-color: #d4be98;
+#workspaces button:hover {
+  background-color: #928374;
 }
 
-#workspaces button.focused, #tags button.focused, #tags button.focused.occupied {
-  border-color: #a9b665;
+#workspaces button.focused {
+  background-color: #ebdbb2;
+}
+
+#workspaces button.focused * {
+  color: #282828;
+}
+
+#workspaces button.urgent {
+  background-color: #458588;
+}
+
+#workspaces button.urgent * {
+  color: #282828;
 }

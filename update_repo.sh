@@ -1,6 +1,4 @@
-cp ~/.zshrc .
-cp ~/.zshenv .
-cp -r ~/.config/zellij .
+cp -r ~/.config/nushell .
 cp -r ~/.config/alacritty .
 cp -r ~/.config/helix .
 cp -r ~/.config/sway .

@@ -1,0 +1,98 @@
+{
+	"height": 25,
+	"margin-top": 0,
+	"margin-bottom": 0,
+	"spacing": 0,
+	"layer": "top",
+
+	"modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode"],
+	"modules-center": ["sway/window"],
+	"modules-right": ["sway/language", "network", "bluetooth", "pulseaudio", "battery", "clock"],
+
+	"sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    }
+	},
+	"sway/scratchpad": {
+		"format": " {count}",
+		"show-empty": false,
+	},
+	"sway/mode": {
+		"format": "{}",
+		"tooltip": false,
+	},
+	
+	"sway/window": {
+		"max-length": 50,
+		"all-outputs": false,
+	},
+	"clock": {
+		// 󰸗 󰥔
+		"format": "{:󰥔 %H:%M }",
+		"tooltip-format": "<big>{:%A, %B %d}\n\n{calendar}</big>"
+	},
+	
+	"tray": {
+		"icon-size": 14,
+		"spacing": 10,
+	},
+	"sway/language": {
+		"format": "{shortDescription}",
+		"tooltip": false,
+	},
+	"network": {
+		"format-disabled": "",
+		"format-disconnected": "󱚼",
+		"format-wifi": "{icon}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "󰈁",
+		"tooltip-format": "SSID: {essid}\nIP: {ipaddr}",
+		"on-click": "nm-connection-editor",
+		// "on-click": "~/.config/eww/scripts/toggle_menu.sh",
+	},
+	"bluetooth": {
+		"format-disabled": "",
+		"format-off": "",
+		"format-on": "󰂯",
+		"format-connected": "󰂱",
+	},
+	"pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 ",
+    "format-icons": ["", "", ""],
+		"scroll-step": 5.0,
+		"tooltip": false,
+    "on-click": "pavucontrol"
+		// "on-click": "~/.config/eww/scripts/toggle_menu.sh",
+  },
+	"backlight": {
+    "format": "{icon} {percent}%",
+		"format-icons": ["󰃜", "󰃟", "󰃠"],
+		"scroll-step": 5.0,
+		"tooltip": false,
+  },
+	"battery": {
+    	"states": {
+      		"warning": 30,
+      		"critical": 15
+    	},
+    "format": "{icon}<span>&#8201;</span>{capacity}%", // <span> contains thin space to position the icon nicely
+    "format-plugged": " {icon}<span>&#8201;</span>{capacity}%", 
+    "format-charging": "󱐋{icon}<span>&#8201;</span>{capacity}%", 
+		"format-icons": [" ", " ", " ", " " , " "],
+		"tooltip": false,
+		// "on-click": "~/.config/eww/scripts/toggle_menu.sh",
+    },
+	}

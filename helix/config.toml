@@ -11,7 +11,7 @@ gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 
 [editor.file-picker]
 hidden = false
-git-ignore = true
+git-ignore = false
 
 [editor.indent-guides]
 render = true
@@ -26,9 +26,10 @@ select = "block"
 [editor.lsp]
 display-messages = true
 display-inlay-hints = true
+snippets = false
 
 [editor.statusline]
-left = ["mode", "separator", "diagnostics", "file-name", "file-modification-indicator",]
+left = ["mode", "separator", "diagnostics", "file-name", "file-modification-indicator"]
 center = []
 right = ["position", "file-encoding", "file-line-ending", "file-type"]
 separator = " "

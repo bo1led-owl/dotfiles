@@ -1,28 +1,65 @@
 # Colours
-set $foreground #d4be98
+set $foreground #ebdbb2
 set $background #282828
-set $highlight #a9b665
-set $wallpaper ~/Pictures/Wallpapers/wall_secondary.png
 
-client.focused $highlight $highlight $background
+set $black #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $magenta #b16286
+set $cyan #689d6a
+set $white #a89984
 
+set $black_bright #928374
+set $red_bright #fb4934
+set $green_bright #b8bb26
+set $yellow_bright #fabd2f
+set $blue_bright #83a598
+set $magenta_bright #d3869b
+set $cyan_bright #8ec07c
+set $white_bright #ebdbb2
+
+client.focused $white_bright $white_bright $black $blue
+client.focused_inactive $background $background $foreground $blue
+client.unfocused $background $background $foreground $blue
+client.urgent $blue $blue $black $blue
+
+set $wallpaper ~/Pictures/Wallpapers/window.jpg
 output * bg $wallpaper fill
 
 # Output
 set $disp1 eDP-1
 set $disp2 HDMI-A-1
 
-output $disp1 mode 1920x1080@59.984Hz
-output $disp1 pos 160 1080
-output $disp1 scale 1.2
+# Built-in monitor
+output $disp1 {
+	mode 1920x1080@59.984Hz
+	pos 160 1080
+	scale 1.25
+}
 
-output $disp2 mode 1920x1080@60Hz
-output $disp2 pos 0 0
+# Second monitor
+output $disp2 {
+	mode 1920x1080@60Hz
+	pos 0 0
+}
+
+# Idle
+exec_always swayidle -w \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"'
+
+# Do not turn off monitors if a window is in fullscreen mode
+for_window [shell=".*"] inhibit_idle fullscreen
 
 # Apps
 set $terminal alacritty
 set $launcher fuzzel
 set $screenshot exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+
+# Enable xwayland support
+xwayland enable
 
 # Input
 input type:keyboard {
@@ -33,8 +70,12 @@ input type:keyboard {
 
 focus_follows_mouse no
 
-# Hide cursor after 5 seconds
-seat * hide_cursor 5000
+# Hide cursor after 15 seconds
+seat * hide_cursor 15000
+
+input type:pointer {
+	accel_profile flat
+}
 
 input type:touchpad {
     tap enabled
@@ -56,17 +97,21 @@ bindsym XF86PowerOff exec systemctl poweroff -i
 
 bindsym --to-code $mod+Return exec $terminal
 bindsym --to-code Ctrl+Space exec $launcher
+# bindsym --to-code $mod+a exec "~/.config/eww/scripts/toggle_menu.sh"
+
+bindsym --to-code $mod+p exec swaymsg output $disp1 disable
+bindsym --to-code $mod+o exec swaymsg output $disp1 enable
 
 # Screenshot configuration
 bindsym --to-code --release {
 	# capture the specified screen area to clipboard    
-	Print exec grim -g "$(slurp)" - | wl-copy -t image/png
+	Print exec grim -l 3 -g "$(slurp)" - | wl-copy -t image/png && notify-send "Screenshot copied to clipboard"
 	
 	# capture all screens to clipboard    
-	Shift+Print exec grim - | wl-copy -t image/png
+	Shift+Print exec grim -l 3 - | wl-copy -t image/png && notify-send "Screenshot of all displays copied to clipboard"
     
 	# capture the focused monitor to clipboard    
-	Shift+Control+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy -t image/png
+	Shift+Control+Print exec grim -l 3 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy -t image/png && notify-send "Screenshot of the focused display copied to clipboard"
 }
 
 bindsym --to-code $mod+Shift+c reload
@@ -85,10 +130,10 @@ bindsym --to-code $mod+Shift+$down move down
 
 floating_modifier $mod normal
 bindsym --to-code $mod+Shift+Space floating toggle
+bindsym --to-code $mod+Ctrl+Space sticky toggle
 bindsym --to-code $mod+Space focus mode_toggle
 
-bindsym --to-code $mod+$prev workspace prev
-bindsym --to-code $mod+$next workspace next
+bindsym --to-code $mod+b split toggle
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -113,9 +158,12 @@ bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+s move container to scratchpad
+bindsym $mod+s scratchpad show
 
-bindsym $mod+r mode 'resize'
+bindsym --to-code $mod+f fullscreen
+
+bindsym --to-code $mod+r mode 'resize'
 mode 'resize' {
     bindsym h resize shrink width 10px
     bindsym k resize grow height 10px
@@ -125,26 +173,53 @@ mode 'resize' {
     bindsym Escape mode 'default'
 }
 
+# bindswitch lid:off exec swaymsg output $disp1 disable
+# bindswitch lid:on exec swaymsg output $disp1 enable
+bindswitch lid:toggle exec swaymsg output $disp1 toggle
+
 bindgesture swipe:3:left workspace next_on_output
 bindgesture swipe:3:right workspace prev_on_output
 
+# Autotiling
+# exec_always autotiling-rs
+
 # Borders and gaps
-hide_edge_borders smart
+smart_borders off
+smart_gaps off
 default_border pixel 2
-gaps inner 8
-gaps outer 8
+default_floating_border pixel 2
+for_window [class=".*"]  border pixel 2
+for_window [app_id=".*"] border pixel 2
+gaps inner 0
+gaps outer 0
 
 workspace 1 output $disp2 $disp1
 workspace 2 output $disp2 $disp1
-workspace 3 output $disp1
+workspace 3 output $disp2 $disp1
+workspace 4 output $disp1 $disp2
 
-assign [class="[Ss]potify"] workspace 1
-assign [app_id=".*telegram.*"] workspace 1
-assign [app_id="firefox"] workspace 2
+assign [app_id="firefox"] workspace 1
+assign [class="Spotify"] workspace 2
+assign [app_id=".*[Tt]elegram.*"] workspace 3
+assign [class="discord"] workspace 3
+
+# Floating apps
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id=".*kde-authentication-agent.*"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
 
 # Startup applications
 bar swaybar_command waybar
 exec wl-paste --type text --watch clipman store
 exec mako
+exec /usr/lib/polkit-kde-authentication-agent-1
+# exec eww daemon
+# exec_always eww open-many menu_0 menu_1
 
-exec swaymsg workspace 3
+# Move to workspace 4 on start
+exec swaymsg workspace 4
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP

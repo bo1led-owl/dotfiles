@@ -1,12 +1,12 @@
-font=FiraCode Nerd Font 11
+font=FiraCode Nerd Font 12
 
 background-color=#282828ff
-text-color=#d4be98ff
+text-color=#ebdbb2ff
 
-border-color=#d4be98ff
-border-radius=4
+border-color=#ebdbb2ff
+border-radius=8
 
 anchor=top-center
 padding=10
 
-default-timeout=5000
+default-timeout=8000

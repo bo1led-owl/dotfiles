@@ -8,7 +8,7 @@ clipman
 mako
 fuzzel
 firefox
-zsh
+nushell
 alacritty
 helix
 networkmanager
