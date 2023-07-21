@@ -56,7 +56,6 @@ for_window [shell=".*"] inhibit_idle fullscreen
 # Apps
 set $terminal alacritty
 set $launcher fuzzel
-set $screenshot exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 # Enable xwayland support
 xwayland enable
@@ -99,19 +98,30 @@ bindsym --to-code $mod+Return exec $terminal
 bindsym --to-code Ctrl+Space exec $launcher
 # bindsym --to-code $mod+a exec "~/.config/eww/scripts/toggle_menu.sh"
 
+bindsym XF86AudioRaiseVolume exec \
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec \
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec \
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86MonBrightnessUp exec \
+	brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec \
+	brightnessctl set 5%-
+
 bindsym --to-code $mod+p exec swaymsg output $disp1 disable
 bindsym --to-code $mod+o exec swaymsg output $disp1 enable
 
 # Screenshot configuration
 bindsym --to-code --release {
-	# capture the specified screen area to clipboard    
-	Print exec grim -l 3 -g "$(slurp)" - | wl-copy -t image/png && notify-send "Screenshot copied to clipboard"
+	# capture the specified screen area to clipboard
+	Print exec mkdir -p ~/Pictures/Screenshots && slurp | grim -l 3 -g - ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png | wl-copy -t image/png && notify-send "Screenshot saved"
 	
 	# capture all screens to clipboard    
-	Shift+Print exec grim -l 3 - | wl-copy -t image/png && notify-send "Screenshot of all displays copied to clipboard"
+	Shift+Print exec mkdir -p ~/Pictures/Screenshots && grim -l 3 ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png | wl-copy -t image/png && notify-send "Screenshot of all displays saved"
     
 	# capture the focused monitor to clipboard    
-	Shift+Control+Print exec grim -l 3 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy -t image/png && notify-send "Screenshot of the focused display copied to clipboard"
+	Shift+Control+Print exec grim -l 3 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png  | wl-copy -t image/png && notify-send "Screenshot of the focused display saved"
 }
 
 bindsym --to-code $mod+Shift+c reload
@@ -190,8 +200,8 @@ default_border pixel 2
 default_floating_border pixel 2
 for_window [class=".*"]  border pixel 2
 for_window [app_id=".*"] border pixel 2
-gaps inner 0
-gaps outer 0
+gaps inner 2
+gaps outer 2
 
 workspace 1 output $disp2 $disp1
 workspace 2 output $disp2 $disp1

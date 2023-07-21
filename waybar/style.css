@@ -36,6 +36,7 @@ tooltip * {
   border: none;
   padding: 0 10px;
   border-radius: 8px;
+  font-weight: bold;
 }
 
 tooltip label {
@@ -53,6 +54,9 @@ tooltip label {
 #network,
 #bluetooth,
 #pulseaudio,
+#cpu,
+#memory,
+#temperature,
 #backlight,
 #battery,
 #clock
@@ -64,7 +68,6 @@ tooltip label {
 #mode
 {
   margin-left: 4px;
-  border-radius: 8px;
 }
 
 #mode {
