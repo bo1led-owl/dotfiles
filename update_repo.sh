@@ -6,3 +6,4 @@ cp -r ~/.config/waybar .
 cp -r ~/.config/fuzzel .
 cp -r ~/.config/mako .
 cp -r ~/Pictures/Wallpapers/* ./wallpapers
+cp -r ~/scripts .

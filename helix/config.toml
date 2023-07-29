@@ -8,6 +8,7 @@ idle-timeout = 0
 completion-trigger-len = 1
 color-modes = true
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+rulers = [80]
 
 [editor.file-picker]
 hidden = false
