@@ -22,7 +22,7 @@ def create_left_prompt [] {
     let path_segment = $"($path_color)($dir)"
 
     let git = if ('.git' | path exists) {
-        [(ansi magenta), (char space), (git branch --show-current)] | str join
+        [(ansi white), " <", (ansi magenta), (git branch --show-current), (ansi white), ">"] | str join
     } else {
         ""
     }
@@ -54,21 +54,21 @@ def create_right_prompt [] {
 }
 
 # Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = {|| create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = {||}
+$env.PROMPT_COMMAND = {|| create_left_prompt }
+$env.PROMPT_COMMAND_RIGHT = {||}
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = {|| $" (ansi reset)  " }
-let-env PROMPT_INDICATOR_VI_INSERT = {|| ": " }
-let-env PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
-let-env PROMPT_MULTILINE_INDICATOR = {|| "::: " }
+$env.PROMPT_INDICATOR = {|| $" (ansi reset)  " }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
+$env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
 # Note: The conversions happen *after* config.nu is loaded
-let-env ENV_CONVERSIONS = {
+$env.ENV_CONVERSIONS = {
   "PATH": {
     from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
     to_string: { |v| $v | path expand --no-symlink | str join (char esep) }
@@ -79,23 +79,25 @@ let-env ENV_CONVERSIONS = {
   }
 }
 
-let-env PATH = ($env.PATH | split row (char esep) | append '~/bin' | append '~/.cargo/bin' | append '~/.rustup/toolchains')
-let-env MOZ_ENABLE_WAYLAND = 1
-let-env QT_QPA_PLATFORMTHEME = qt5ct
+$env.PATH = ($env.PATH | split row (char esep) | append '~/bin' | append '~/.cargo/bin' | append '~/.rustup/toolchains')
+$env.MOZ_ENABLE_WAYLAND = 1
+$env.QT_QPA_PLATFORMTHEME = qt5ct
+$env.EDITOR = helix
+$env.LANG = "en_GB.utf-8"
 
 # Directories to search for scripts when calling source or use
 #
 # By default, <nushell-config-dir>/scripts is added
-let-env NU_LIB_DIRS = [
+$env.NU_LIB_DIRS = [
     ($nu.default-config-dir | path join 'scripts')
 ]
 
 # Directories to search for plugin binaries when calling register
 #
 # By default, <nushell-config-dir>/plugins is added
-let-env NU_PLUGIN_DIRS = [
+$env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins')
 ]
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-# let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+# $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')

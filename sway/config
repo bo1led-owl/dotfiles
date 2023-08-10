@@ -20,12 +20,12 @@ set $magenta_bright #d3869b
 set $cyan_bright #8ec07c
 set $white_bright #ebdbb2
 
-client.focused $white_bright $white_bright $black $blue
-client.focused_inactive $background $background $foreground $blue
-client.unfocused $background $background $foreground $blue
+client.focused $white_bright $white_bright $black $white_bright
+client.focused_inactive $background $background $foreground $background
+client.unfocused $background $background $foreground $background
 client.urgent $blue $blue $black $blue
 
-set $wallpaper ~/Pictures/Wallpapers/window.jpg
+set $wallpaper ~/Pictures/Wallpapers/jkt_lrt_by_kyokazu_dcjy2wn.png 
 output * bg $wallpaper fill
 
 seat seat0 xcursor_theme Bibata-Modern-Classic 24
@@ -46,6 +46,9 @@ output $disp2 {
 	mode 1920x1080@60Hz
 	pos 0 0
 }
+
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
 
 # Idle
 exec_always swayidle -w \
@@ -94,7 +97,7 @@ set $down j
 set $prev i
 set $next o
 
-bindsym XF86PowerOff exec systemctl poweroff -i
+# bindsym XF86PowerOff exec systemctl poweroff -i
 
 bindsym --to-code $mod+Return exec $terminal
 bindsym --to-code Ctrl+Space exec $launcher
@@ -171,19 +174,24 @@ bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7; workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
-bindsym $mod+Shift+s move container to scratchpad
-bindsym $mod+s scratchpad show
+bindsym --to-code $mod+Shift+Ctrl+h move workspace to output left
+bindsym --to-code $mod+Shift+Ctrl+j move workspace to output down
+bindsym --to-code $mod+Shift+Ctrl+k move workspace to output up
+bindsym --to-code $mod+Shift+Ctrl+l move workspace to output right
+
+bindsym --to-code $mod+Shift+s move container to scratchpad
+bindsym --to-code $mod+s scratchpad show
 
 bindsym --to-code $mod+f fullscreen
 
 bindsym --to-code $mod+r mode 'resize'
 mode 'resize' {
-    bindsym h resize shrink width 10px
-    bindsym k resize grow height 10px
-    bindsym j resize shrink height 10px
-    bindsym l resize grow width 10px
+    bindsym --to-code h resize shrink width 10px
+    bindsym --to-code k resize grow height 10px
+    bindsym --to-code j resize shrink height 10px
+    bindsym --to-code l resize grow width 10px
 
     bindsym Escape mode 'default'
 }
@@ -195,9 +203,6 @@ bindswitch lid:toggle exec swaymsg output $disp1 toggle
 bindgesture swipe:3:left workspace next_on_output
 bindgesture swipe:3:right workspace prev_on_output
 
-# Autotiling
-# exec_always autotiling-rs
-
 # Borders and gaps
 smart_borders off
 smart_gaps off
@@ -206,7 +211,7 @@ default_floating_border pixel 2
 for_window [class=".*"]  border pixel 2
 for_window [app_id=".*"] border pixel 2
 gaps inner 2
-gaps outer 2
+gaps outer 0
 
 workspace 1 output $disp2 $disp1
 workspace 2 output $disp2 $disp1
@@ -229,8 +234,10 @@ bar swaybar_command waybar
 exec wl-paste --type text --watch clipman store
 exec mako
 exec /usr/lib/polkit-kde-authentication-agent-1
+exec_always autotiling-rs
 # exec eww daemon
 # exec_always eww open-many menu_0 menu_1
+
 
 # Move to workspace 4 on start
 exec swaymsg workspace 4

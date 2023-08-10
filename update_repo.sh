@@ -1,4 +1,4 @@
-cp -r ~/.config/nushell/*.nu .
+cp -r ~/.config/nushell/*.nu ./nushell
 cp -r ~/.config/alacritty .
 cp -r ~/.config/helix .
 cp -r ~/.config/sway .

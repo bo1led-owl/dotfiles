@@ -83,12 +83,12 @@ tooltip label {
   padding-right: 14px;
 }
 
-#network.disabled, #bluetooth.off, #bluetooth.disabled * {
+#network.disabled, #bluetooth.off, #bluetooth.disabled {
   margin: 0;
   padding: 0;
 }
 
-#window {
+#window, #custom-spotify {
   font-weight: bold;
 }
 

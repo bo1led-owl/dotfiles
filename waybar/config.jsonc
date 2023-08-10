@@ -6,8 +6,12 @@
 	"layer": "top",
 
 	"modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode"],
-	"modules-center": ["sway/window"],
+	"modules-center": [
+		// "sway/window",
+		"custom/spotify"
+	],
 	"modules-right": [
+		// "tray",
 		"sway/language",
 		"network",
 		"bluetooth",
@@ -48,6 +52,10 @@
 	"sway/window": {
 		"max-length": 50,
 		"all-outputs": false,
+	},
+	"custom/spotify": {
+		"exec": "~/.config/waybar/custom/spotify.sh",
+		"format": "󰓇 {}",
 	},
 		
 	"tray": {
