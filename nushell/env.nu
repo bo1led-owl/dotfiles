@@ -12,8 +12,8 @@ def create_left_prompt [] {
         }
     }
 
-    let dir = ([
-        ($env.PWD | str substring 0..($home | str length) | str replace --string $home "~"),
+     let dir = ([
+        ($env.PWD | str substring 0..($home | str length) | str replace $home "~"),
         ($env.PWD | str substring ($home | str length)..)
     ] | str join)
 
@@ -29,7 +29,7 @@ def create_left_prompt [] {
 
     [
         (char space), 
-        ($path_segment | str replace --all --string (char path_sep) $"($separator_color)/($path_color)"),
+        ($path_segment | str replace --all (char path_sep) $"($separator_color)/($path_color)"),
         ($git)
     ] | str join
 }

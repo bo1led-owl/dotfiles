@@ -56,6 +56,8 @@
 	"custom/spotify": {
 		"exec": "~/.config/waybar/custom/spotify.sh",
 		"format": "󰓇 {}",
+		"tooltip": false,
+		"escape": true,
 	},
 		
 	"tray": {

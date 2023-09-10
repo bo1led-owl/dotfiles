@@ -25,7 +25,7 @@ client.focused_inactive $background $background $foreground $background
 client.unfocused $background $background $foreground $background
 client.urgent $blue $blue $black $blue
 
-set $wallpaper ~/Pictures/Wallpapers/jkt_lrt_by_kyokazu_dcjy2wn.png 
+set $wallpaper ~/Pictures/Wallpapers/jkt_lrt_by_kyokazu_dcjy2wn.png
 output * bg $wallpaper fill
 
 seat seat0 xcursor_theme Bibata-Modern-Classic 24
@@ -38,7 +38,7 @@ set $disp2 HDMI-A-1
 output $disp1 {
 	mode 1920x1080@59.984Hz
 	pos 160 1080
-	scale 1.25
+	scale 1.1
 }
 
 # Second monitor
@@ -79,6 +79,7 @@ seat * hide_cursor 15000
 
 input type:pointer {
 	accel_profile flat
+	pointer_accel -0.25
 }
 
 input type:touchpad {
@@ -122,14 +123,26 @@ bindsym --to-code $mod+o exec swaymsg output $disp1 enable
 
 # Screenshot configuration
 bindsym --to-code --release {
-	# capture the specified screen area to clipboard
-	Print exec mkdir -p ~/Pictures/Screenshots && slurp | grim -l 3 -g - ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png | wl-copy -t image/png && notify-send "Screenshot saved"
+	# capture the specified screen area
+	Print exec mkdir -p ~/Pictures/Screenshots && \
+	path=~/Pictures/Screenshots/$(date +"%d-%m-%Y-%H-%M-%S").png && \
+	slurp | grim -l 3 -g - $path && \
+	wl-copy < $path && \
+	notify-send "Screenshot saved"
 	
-	# capture all screens to clipboard    
-	Shift+Print exec mkdir -p ~/Pictures/Screenshots && grim -l 3 ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png | wl-copy -t image/png && notify-send "Screenshot of all displays saved"
-    
-	# capture the focused monitor to clipboard    
-	Shift+Control+Print exec grim -l 3 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png  | wl-copy -t image/png && notify-send "Screenshot of the focused display saved"
+	# capture all screens
+	Shift+Print exec mkdir -p ~/Pictures/Screenshots && \
+	path=~/Pictures/Screenshots/$(date +"%d-%m-%Y-%H-%M-%S").png && \
+	grim -l 3 $path && \
+	wl-copy < $path && \
+	notify-send "Screenshot of all displays saved"
+	
+	# capture the focused monitor
+	Ctrl+Shift+Print exec mkdir -p ~/Pictures/Screenshots && \
+	path=~/Pictures/Screenshots/$(date +"%d-%m-%Y-%H-%M-%S").png && \
+	grim -l 3 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $path && \
+	wl-copy < $path && \
+	notify-send "Screenshot of the focused display saved"  
 }
 
 bindsym --to-code $mod+Shift+c reload
@@ -151,7 +164,7 @@ bindsym --to-code $mod+Shift+Space floating toggle
 bindsym --to-code $mod+Ctrl+Space sticky toggle
 bindsym --to-code $mod+Space focus mode_toggle
 
-bindsym --to-code $mod+b split toggle
+# bindsym --to-code $mod+b split toggle
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -163,7 +176,6 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
-bindsym $mod+tab workspace back_and_forth
 
 bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
@@ -226,22 +238,20 @@ assign [class="discord"] workspace 3
 # Floating apps
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="blueman-*"] floating enable
 for_window [app_id=".*kde-authentication-agent.*"] floating enable
 for_window [title="Picture-in-Picture"] floating enable
 
+# Move to workspace 4 on start
+workspace 4
+
 # Startup applications
 bar swaybar_command waybar
-exec wl-paste --type text --watch clipman store
-exec mako
-exec /usr/lib/polkit-kde-authentication-agent-1
-exec_always autotiling-rs
-# exec eww daemon
-# exec_always eww open-many menu_0 menu_1
+exec --no-startup-id wl-paste --type text --watch clipman store
+exec --no-startup-id mako
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+exec --no-startup-id autotiling-rs
 
-
-# Move to workspace 4 on start
-exec swaymsg workspace 4
-
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-exec hash dbus-update-activation-environment 2>/dev/null && \
+exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP

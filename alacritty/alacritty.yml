@@ -12,7 +12,7 @@ window:
   #     - none: Neither borders nor title bar
   decorations: none 
 
-  opacity: .975
+  opacity: 1
 
   # Window title
   title: Alacritty
@@ -34,7 +34,7 @@ shell:
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Regular
+    style: Medium
 
   bold:
     family: FiraCode Nerd Font
@@ -186,9 +186,7 @@ schemes:
       white:   '#e6d5ae'
   gruvbox: &gruvbox
     primary:
-      # hard contrast: background = '#1d2021'
       background: '#282828'
-      # soft contrast: background = '#32302f'
       foreground: '#ebdbb2'
     normal:
       black:   '#282828'

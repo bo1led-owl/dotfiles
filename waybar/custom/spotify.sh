@@ -6,10 +6,13 @@ while read -r line; do
     'Playing')
       playerctl metadata -p spotify --format '{{artist}} - {{ title }}'
     ;;
-    'Paused')
-      echo
-    ;;
-    'No players found')
+    # 'Paused')
+      # echo
+    # ;;
+    # 'No players found')
+      # echo
+    # ;;
+    *)
       echo
     ;;
   esac

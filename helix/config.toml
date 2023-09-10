@@ -1,11 +1,13 @@
 theme = "gruvbox"
 
 [editor]
+mouse = true
 auto-format = true
 true-color = true
 cursorline = true
 idle-timeout = 0
 completion-trigger-len = 1
+# completion-replace = true
 color-modes = true
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 rulers = [80]
@@ -18,6 +20,9 @@ git-ignore = false
 render = true
 character = "│"
 skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -37,6 +42,3 @@ separator = " "
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-
-[keys.normal]
-esc = ["collapse_selection", "keep_primary_selection"]
