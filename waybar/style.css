@@ -89,11 +89,11 @@ tooltip label {
 }
 
 #window {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #custom-spotify {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 #workspaces button {

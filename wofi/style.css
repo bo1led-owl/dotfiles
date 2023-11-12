@@ -1,0 +1,36 @@
+ * {
+  font-family: "FiraCode Nerd Font";
+  font-size: 20px;
+  font-weight: 500;
+  color: #ebdbb2;
+  border-radius: 0;
+}
+
+window {
+  background-color: #282828;
+  border: solid 2px #ebdbb2;
+}
+
+#inner-box {
+  margin: 2px;
+}
+
+#input * {
+  color: white;
+}
+
+#text {
+  padding: 2px;
+}
+
+#text:selected {
+  color: #282828;
+}
+
+#entry:nth-child(even){
+  background-color: #32302f;
+}
+
+#entry:selected {
+  background-color: #ebdbb2;
+}

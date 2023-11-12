@@ -1,0 +1,120 @@
+"attribute" = "bright_aqua"
+"keyword" = { fg = "bright_red" }
+"keyword.directive" = "neutral_aqua"
+"namespace" = "bright_aqua"
+"punctuation" = "bright_orange"
+"punctuation.delimiter" = "bright_orange"
+"operator" = "bright_purple"
+"special" = "purple0"
+"variable.other.member" = "bright_blue"
+"variable" = "light2"
+"variable.builtin" = "bright_orange"
+"variable.parameter" = "light2"
+"type" = "bright_yellow"
+"type.builtin" = "bright_yellow"
+"constructor" = { fg = "bright_purple", modifiers = ["bold"] }
+"function" = { fg = "bright_green", modifiers = ["bold"] }
+"function.macro" = "bright_aqua"
+"function.builtin" = "bright_yellow"
+"tag" = "bright_red"
+"comment" = { fg = "dark4" }
+"constant" = { fg = "bright_purple" }
+"constant.builtin" = { fg = "bright_purple", modifiers = ["bold"] }
+"string" = "bright_green"
+"constant.numeric" = "bright_purple"
+"constant.character.escape" = { fg = "light2", modifiers = ["bold"] }
+"label" = "bright_red"
+"module" = "bright_aqua"
+
+"diff.plus" = "bright_green"
+"diff.delta" = "bright_orange"
+"diff.minus" = "bright_red"
+
+"warning" = "bright_orange"
+"error" = "bright_red"
+"info" = "bright_aqua"
+"hint" = "bright_blue"
+
+"ui.background" = { bg = "dark0" }
+"ui.linenr" = { fg = "dark4" }
+"ui.linenr.selected" = { fg = "bright_yellow" }
+"ui.cursorline" = { bg = "dark1" }
+"ui.statusline" = { fg = "light1", bg = "dark2" }
+"ui.statusline.normal" = { fg = "light1", bg = "dark2" }
+"ui.statusline.insert" = { fg = "light1", bg = "neutral_aqua" }
+"ui.statusline.select" = { fg = "light1", bg = "neutral_orange" }
+"ui.statusline.inactive" = { fg = "light4", bg = "dark1" }
+"ui.popup" = { bg = "dark1" }
+"ui.window" = { bg = "dark1" }
+"ui.help" = { bg = "dark1", fg = "light1" }
+"ui.text" = { fg = "light4" }
+"ui.text.focus" = { fg = "light1" }
+"ui.selection" = { bg = "dark2" }
+"ui.selection.primary" = { bg = "dark3" }
+"ui.cursor.primary" = { bg = "light4", fg = "dark1" }
+"ui.cursor.match" = { bg = "dark3" }
+"ui.menu" = { fg = "light1", bg = "dark2" }
+"ui.menu.selected" = { fg = "dark2", bg = "bright_blue", modifiers = ["bold"] }
+"ui.virtual.whitespace" = "dark2"
+"ui.virtual.ruler" = { bg = "dark1" }
+"ui.virtual.inlay-hint" = { fg = "dark4" }
+"ui.virtual.wrap" = { fg = "dark2" }
+
+"diagnostic.warning" = { underline = { color = "faded_orange", style = "curl" } }
+"diagnostic.error" = { underline = { color = "bright_red", style = "curl" } }
+"diagnostic.info" = { underline = { color = "bright_aqua", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "bright_blue", style = "curl" } }
+
+"markup.heading" = "bright_aqua"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "bright_green", modifiers = ["underlined"] }
+"markup.link.text" = "bright_red"
+"markup.raw" = "bright_red"
+
+[palette]
+dark0_hard  = '#1d2021'
+dark0       = '#282828'
+dark0_soft  = '#32302f' 
+dark1       = "#3c3836"
+dark2       = '#504945' 
+dark3       = "#665c54" 
+dark4       = "#7c6f64"
+dark4_256   = "#7c6f64"
+
+gray_245    = "#928374" 
+gray_244    = "#928374" 
+
+light0_hard = "#f9f5d7" 
+light0      = "#fbf1c7" 
+light0_soft = "#f2e5bc" 
+light1      = "#ebdbb2" 
+light2      = "#d5c4a1" 
+light3      = "#bdae93" 
+light4      = "#a89984" 
+light4_256  = "#a89984" 
+
+bright_red     = "#fb4934" 
+bright_green   = "#b8bb26" 
+bright_yellow  = "#fabd2f" 
+bright_blue    = "#83a598" 
+bright_purple  = "#d3869b" 
+bright_aqua    = "#8ec07c" 
+bright_orange  = "#fe8019" 
+
+neutral_red    = "#cc241d" 
+neutral_green  = "#98971a" 
+neutral_yellow = "#d79921" 
+neutral_blue   = "#458588" 
+neutral_purple = "#b16286" 
+neutral_aqua   = "#689d6a" 
+neutral_orange = "#d65d0e" 
+
+faded_red      = "#9d0006" 
+faded_green    = "#79740e" 
+faded_yellow   = "#b57614" 
+faded_blue     = "#076678" 
+faded_purple   = "#8f3f71" 
+faded_aqua     = "#427b58" 
+faded_orange   = "#af3a03" 

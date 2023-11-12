@@ -1,0 +1,39 @@
+set $foreground #ebdbb2
+set $background #282828
+
+set $black #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $magenta #b16286
+set $cyan #689d6a
+set $white #a89984
+
+set $black_bright #928374
+set $red_bright #fb4934
+set $green_bright #b8bb26
+set $yellow_bright #fabd2f
+set $blue_bright #83a598
+set $magenta_bright #d3869b
+set $cyan_bright #8ec07c
+set $white_bright #ebdbb2
+
+client.focused $white_bright $foreground $black $white_bright
+client.focused_inactive $background $background $foreground $background
+client.unfocused $background $background $foreground $background
+client.urgent $blue $blue $black $blue
+
+seat seat0 xcursor_theme Bibata-Modern-Classic 24
+
+set $wallpaper ~/Pictures/Wallpapers/jkt_lrt_by_kyokazu_dcjy2wn.png
+output * bg $wallpaper fill
+
+smart_borders off
+smart_gaps off
+default_border pixel 2
+default_floating_border pixel 2
+for_window [class=".*"]  border pixel 2
+for_window [app_id=".*"] border pixel 2
+gaps inner 2
+gaps outer 0

@@ -1,0 +1,16 @@
+workspace 1 output $disp2 $disp1
+workspace 2 output $disp2 $disp1
+workspace 3 output $disp2 $disp1
+workspace 4 output $disp1 $disp2
+
+assign [app_id="firefox"] workspace 1
+assign [class="Spotify"] workspace 2
+assign [app_id=".*[Tt]elegram.*"] workspace 3
+assign [class="discord"] workspace 3
+
+# Floating apps
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="blueman-*"] floating enable
+for_window [app_id=".*kde-authentication-agent.*"] floating enable
+for_window [title="Picture-in-Picture"] floating enable

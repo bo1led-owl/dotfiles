@@ -193,9 +193,6 @@ $env.config = {
   rm: {
     always_trash: false # always act as if -t was given. Can be overridden with -p
   }
-  cd: {
-    abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
-  }
   table: {
     mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
     index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
@@ -281,7 +278,7 @@ $env.config = {
   }
   completions: {
     case_sensitive: true # set to true to enable case-sensitive completions
-    quick: true  # set this to false to prevent auto-selecting completions when only one remains
+    quick: true # set this to false to prevent auto-selecting completions when only one remains
     partial: true  # set this to false to prevent partial filling of the prompt
     algorithm: "prefix"  # prefix or fuzzy
     external: {
@@ -551,5 +548,3 @@ $env.config = {
     }
   ]
 }
-
-source /home/bo1led-owl/.config/broot/launcher/nushell/br
