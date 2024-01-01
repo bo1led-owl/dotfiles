@@ -3,8 +3,8 @@ theme = "gruvbox"
 [editor]
 mouse = true
 auto-format = true
-true-color = true
 cursorline = true
+line-number = "relative"
 idle-timeout = 0
 completion-trigger-len = 1
 # completion-replace = true
@@ -42,3 +42,21 @@ separator = " "
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+# [keys.normal]
+# left = []
+# right = []
+# up = []
+# down = []
+
+# [keys.insert]
+# left = []
+# right = []
+# up = []
+# down = []
+
+# [keys.select]
+# left = []
+# right = []
+# up = []
+# down = []

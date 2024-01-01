@@ -1,0 +1,2 @@
+hyprctl dispatch dpms off eDP-1
+hyprctl -j workspaces | ~/.config/hypr/scripts/escape_workspaces

@@ -9,8 +9,9 @@ exec_always swayidle -w \
     timeout 600 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"'
 
-set $terminal alacritty
-set $launcher wofi --hide-scroll --show drun
+set $terminal foot
+set $launcher fuzzel
+# set $launcher wofi --hide-scroll --show drun
 
 bar swaybar_command waybar
 

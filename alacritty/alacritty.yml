@@ -7,7 +7,7 @@ window:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
   decorations: none 
-
+  
   opacity: 1
 
   title: Alacritty
@@ -42,7 +42,7 @@ font:
   #   family: FiraCode Nerd Font
   #   style: Bold Italic
 
-  size: 12
+  size: 13.5
 
 schemes:
   gruvbox: &gruvbox

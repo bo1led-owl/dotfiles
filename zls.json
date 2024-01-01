@@ -1,0 +1,5 @@
+{
+  "inlay_hints_hide_redundant_param_names": true,
+  "inlay_hints_show_variable_type_hints": true,
+  "warn_style": true
+}

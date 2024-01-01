@@ -16,5 +16,8 @@ output $disp2 {
 
 bindswitch lid:toggle exec swaymsg output $disp1 toggle
 
+# temporarily turning off primary display
+output $disp1 disable
+
 # Do not turn off monitors if a window is in fullscreen mode
 for_window [shell=".*"] inhibit_idle fullscreen

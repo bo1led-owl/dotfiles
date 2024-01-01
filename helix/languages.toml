@@ -11,14 +11,20 @@ auto-format = true
 
 [[language]]
 name = "cpp"
+file-types = ["cpp", "hpp", "cc", "hh"]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
 [[language]]
 name = "c"
+file-types = ["c", "h"]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
 [[language]]
 name = "toml"
 auto-format = true
+
+[[language]]
+name = "zig"
+auto-format = false

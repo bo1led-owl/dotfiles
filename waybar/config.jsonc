@@ -5,14 +5,14 @@
 	"spacing": 0,
 	"layer": "top",
 
-	"modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode",],
+	"modules-left": ["hyprland/workspaces"],
 	"modules-center": [
-		// "sway/window",
+		// "hyprland/window",
 		"custom/spotify"
 	],
 	"modules-right": [
 		// "tray",
-		"sway/language",
+		"hyprland/language",
 		"network",
 		"bluetooth",
 		"pulseaudio",
@@ -24,7 +24,7 @@
 		"clock#time",
 	],
 
-	"sway/workspaces": {
+	"hyprland/workspaces": {
     "disable-scroll": true,
     "format": "{icon}",
     "format-icons": {
@@ -40,16 +40,16 @@
       "10":"10"
     }
 	},
-	"sway/scratchpad": {
+	"hyprland/scratchpad": {
 		"format": " {count}",
 		"show-empty": false,
 	},
-	"sway/mode": {
+	"hyprland/mode": {
 		"format": "{}",
 		"tooltip": false,
 	},
 	
-	"sway/window": {
+	"hyprland/window": {
 		"max-length": 50,
 		"all-outputs": false,
 	},
@@ -64,7 +64,7 @@
 		"icon-size": 14,
 		"spacing": 10,
 	},
-	"sway/language": {
+	"hyprland/language": {
 		"format": "{shortDescription}",
 		"tooltip": false,
 	},
