@@ -9,7 +9,7 @@
   color: #ebdbb2;
   box-shadow: none;
   text-shadow: none;
-  transition-duration: 0.25s;
+  transition-duration: 0.3s;
   transition-property: background-color, background-image;
 }
 
@@ -99,6 +99,7 @@ tooltip label {
 #workspaces button {
   padding: 0 2px;
   border: none;
+  transition-duration: 0.3s;
 }
 
 #workspaces button:hover {

@@ -1,4 +1,5 @@
 cp -r ~/.config/nushell/*.nu ./nushell
+cp -r ~/.config/zsh/ .
 cp -r ~/.config/alacritty .
 cp -r ~/.config/foot .
 cp -r ~/.config/helix .

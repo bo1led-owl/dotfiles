@@ -1,2 +1,1 @@
-hyprctl dispatch dpms off eDP-1
-hyprctl -j workspaces | ~/.config/hypr/scripts/escape_workspaces
+hyprctl keyword monitor eDP-1,disable

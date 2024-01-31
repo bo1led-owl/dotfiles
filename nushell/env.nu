@@ -80,12 +80,6 @@ $env.ENV_CONVERSIONS = {
   }
 }
 
-$env.PATH = ($env.PATH | split row (char esep) | append '~/bin' | append '~/.cargo/bin' | append '~/.rustup/toolchains')
-$env.MOZ_ENABLE_WAYLAND = 1
-$env.QT_QPA_PLATFORMTHEME = qt5ct
-$env.EDITOR = helix
-$env.LANG = "en_GB.utf-8"
-
 # Directories to search for scripts when calling source or use
 #
 # By default, <nushell-config-dir>/scripts is added
