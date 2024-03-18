@@ -5,7 +5,7 @@
   margin: 0;
   font-family: "FiraCode Nerd Font";
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
   color: #ebdbb2;
   box-shadow: none;
   text-shadow: none;
@@ -114,6 +114,7 @@ tooltip label {
   color: #282828;
 }
 
+/*
 #workspaces button.urgent {
   background-color: #458588;
 }
@@ -121,3 +122,4 @@ tooltip label {
 #workspaces button.urgent * {
   color: #282828;
 }
+*/

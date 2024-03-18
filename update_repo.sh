@@ -7,6 +7,7 @@ cp -r ~/.config/nvim .
 cp -r ~/.config/sway .
 cp -r ~/.config/hypr .
 cp -r ~/.config/wofi .
+cp -r ~/.config/tmux .
 cp -r ~/.config/waybar .
 cp -r ~/.config/fuzzel .
 cp -r ~/.config/mako .

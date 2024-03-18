@@ -1,10 +1,10 @@
-font=FiraCode Nerd Font 12
+font=FiraCode Nerd Font 13
 
 background-color=#282828ff
 text-color=#ebdbb2ff
 
 border-color=#ebdbb2ff
-border-radius=6
+border-radius=4
 
 anchor=top-center
 padding=10

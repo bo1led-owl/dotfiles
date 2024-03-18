@@ -9,6 +9,7 @@ idle-timeout = 0
 completion-trigger-len = 1
 # completion-replace = true
 color-modes = true
+true-color=true 
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 rulers = [80]
 

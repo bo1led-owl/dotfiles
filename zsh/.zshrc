@@ -9,8 +9,8 @@ export PROMPT=' %{$fg[green]%}%~%{$reset_color%}%{$fg[magenta]%}${vcs_info_msg_0
 
 alias hx="helix"
 
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=5000
+SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history.txt
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
