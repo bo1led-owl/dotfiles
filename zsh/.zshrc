@@ -7,8 +7,9 @@ zstyle ':vcs_info:git:*' formats ' %b'
 setopt PROMPT_SUBST
 export PROMPT=' %{$fg[green]%}%~%{$reset_color%}%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%} $ '
 
-alias hx="helix"
-
+alias hx="helix --log /dev/null"
+alias ls="ls --color=auto -h"
+  
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history.txt

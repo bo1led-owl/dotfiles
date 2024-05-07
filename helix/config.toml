@@ -7,15 +7,16 @@ cursorline = true
 line-number = "relative"
 idle-timeout = 0
 completion-trigger-len = 1
+completion-timeout = 5
 # completion-replace = true
 color-modes = true
-true-color=true 
+true-color = true 
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 rulers = [80]
 
 [editor.file-picker]
 hidden = false
-git-ignore = false
+git-ignore = true
 
 [editor.indent-guides]
 render = true
@@ -43,21 +44,3 @@ separator = " "
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-
-# [keys.normal]
-# left = []
-# right = []
-# up = []
-# down = []
-
-# [keys.insert]
-# left = []
-# right = []
-# up = []
-# down = []
-
-# [keys.select]
-# left = []
-# right = []
-# up = []
-# down = []

@@ -1,6 +1,24 @@
+[language-server.clangd]
+command = "clangd"
+args = [
+  "--background-index",
+  "-j=4",
+  "--completion-style=detailed",
+  "--header-insertion=never",
+]
+
+[[language]]
+name = "cpp"
+file-types = ["cpp", "hpp", "cc", "hh"]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "c"
+file-types = ["c", "h"]
+indent = { tab-width = 4, unit = "    " }
+
 [[language]]
 name = "rust"
-auto-format = true
 
 [language.auto-pairs]
 '(' = ')'
@@ -10,16 +28,7 @@ auto-format = true
 '`' = '`'
 
 [[language]]
-name = "cpp"
-file-types = ["cpp", "hpp", "cc", "hh"]
-indent = { tab-width = 4, unit = "    " }
-auto-format = true
-
-[[language]]
-name = "c"
-file-types = ["c", "h"]
-indent = { tab-width = 4, unit = "    " }
-auto-format = true
+name = "go"
 
 [[language]]
 name = "toml"
@@ -27,4 +36,3 @@ auto-format = true
 
 [[language]]
 name = "zig"
-auto-format = false

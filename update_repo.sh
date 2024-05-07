@@ -11,6 +11,6 @@ cp -r ~/.config/tmux .
 cp -r ~/.config/waybar .
 cp -r ~/.config/fuzzel .
 cp -r ~/.config/mako .
-cp -r ~/Pictures/Wallpapers/* ./wallpapers
-cp -r ~/scripts .
 cp ~/.config/zls.json .
+cp -r ~/.config/btop .
+cp -r ~/scripts .

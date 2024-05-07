@@ -88,8 +88,8 @@ tooltip label {
   padding: 0;
 }
 
-#window {
-  /* font-weight: bold; */
+#window * {
+  /* font-weight: 700; */
 }
 
 #custom-spotify {

@@ -7,7 +7,8 @@
 
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": [
-		"custom/spotify"
+		// "custom/spotify"
+		"hyprland/window"
 	],
 	"modules-right": [
 		"hyprland/language",
@@ -45,7 +46,7 @@
 	},
 	
 	"hyprland/window": {
-		"max-length": 50,
+		"max-length": 100,
 		"all-outputs": false,
 	},
 	"custom/spotify": {
