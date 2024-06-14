@@ -1,9 +1,7 @@
 [language-server.clangd]
 command = "clangd"
 args = [
-  "--background-index",
-  "-j=4",
-  "--completion-style=detailed",
+#   "--background-index",
   "--header-insertion=never",
 ]
 
@@ -36,3 +34,4 @@ auto-format = true
 
 [[language]]
 name = "zig"
+auto-format = false

@@ -13,4 +13,5 @@ cp -r ~/.config/fuzzel .
 cp -r ~/.config/mako .
 cp ~/.config/zls.json .
 cp -r ~/.config/btop .
+cp -r ~/.config/neofetch .
 cp -r ~/scripts .
