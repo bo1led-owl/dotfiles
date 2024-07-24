@@ -1,0 +1,15 @@
+firefox
+telegram-desktop
+blueman
+nm-connection-editor
+pavucontrol
+
+fuzzel
+mako
+waybar
+
+zsh
+helix
+foot
+tmux
+btop
