@@ -22,3 +22,5 @@ cp -r ~/.config/neofetch ./.config/
 cp ~/.zprofile .
 cp -r ~/scripts .
 cp ~/.gdbinit .
+
+cp -r ~/Pictures/Wallpapers .
