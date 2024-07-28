@@ -10,9 +10,12 @@ waybar
 swayidle
 swaybg
 wl-clipboard
+slurp
+grim
 
 zsh
 helix
 foot
 tmux
 btop
+yazi
