@@ -3,6 +3,7 @@ telegram-desktop
 blueman
 nm-connection-editor
 pavucontrol
+brightnessctl
 
 fuzzel
 mako

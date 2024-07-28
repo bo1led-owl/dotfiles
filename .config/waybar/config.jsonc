@@ -133,5 +133,6 @@
 	},
 	"clock#time": {
 			"format": "󰥔 {:%H:%M}",
+			"tooltip": false,
 		},
 	}
