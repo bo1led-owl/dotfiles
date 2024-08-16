@@ -1,7 +1,6 @@
 mkdir .config
 mkdir ./.config/nushell
 
-
 cp -r ~/.config/nushell/*.nu ./.config/nushell
 cp -r ~/.config/zsh/ ./.config/
 cp -r ~/.config/alacritty ./.config/
@@ -16,7 +15,6 @@ cp -r ~/.config/waybar ./.config/
 cp -r ~/.config/fuzzel ./.config/
 cp -r ~/.config/mako ./.config/
 cp ~/.config/zls.json ./.config/
-cp -r ~/.config/btop ./.config/
 cp -r ~/.config/neofetch ./.config/
 
 cp ~/.zprofile .

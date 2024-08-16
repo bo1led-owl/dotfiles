@@ -17,6 +17,7 @@ alias ls="ls --color=auto -h"
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history.txt
+setopt SHARE_HISTORY
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

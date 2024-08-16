@@ -1,7 +1,7 @@
 [language-server.clangd]
 command = "clangd"
 args = [
-#   "--background-index",
+  # "--background-index",
   "--header-insertion=never",
 ]
 
@@ -35,3 +35,4 @@ auto-format = true
 [[language]]
 name = "zig"
 auto-format = false
+language-servers = [ { name = "zls", except-features = [ "inlay-hints" ] } ]
