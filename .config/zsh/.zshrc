@@ -13,6 +13,7 @@ bindkey "^X^E" edit-command-line
 
 alias hx="helix --log /dev/null"
 alias ls="ls --color=auto -h"
+alias fzf="fzf --preview \"bat --color=always --style=numbers --line-range=:100 {}\""
   
 HISTSIZE=10000
 SAVEHIST=10000
