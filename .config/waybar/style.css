@@ -59,7 +59,8 @@ tooltip label {
 #temperature,
 #backlight,
 #battery,
-#clock
+#clock,
+#custom-time
 {
   padding: 0 10px;
 }

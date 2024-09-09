@@ -17,23 +17,24 @@
 		"pulseaudio",
 		"battery",
 		"clock#date",
-		"clock#time",
+		// "clock#time",
+		"custom/time",
 	],
 
 	"hyprland/workspaces": {
     "disable-scroll": true,
     "format": "{icon}",
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10":"10"
+      "1":  "1",
+      "2":  "2",
+      "3":  "3",
+      "4":  "4",
+      "5":  "5",
+      "6":  "6",
+      "7":  "7",
+      "8":  "8",
+      "9":  "9",
+      "10": "10"
     }
 	},
 	"sway/scratchpad": {
@@ -111,28 +112,31 @@
 	"battery": {
 		"interval": 3,
     	"states": {
-      		"warning": 30,
+      		"warning": 25,
       		"critical": 15
     	},
     "format": "{icon}<span>&#8201;</span>{capacity}%", // <span> contains thin space to position the icon nicely
-    // "format-plugged": " {icon}<span>&#8201;</span>{capacity}%", 
-    // "format-charging": "󱐋{icon}<span>&#8201;</span>{capacity}%", 
-		// "format-icons": [" ", " ", " ", " " , " "],
 		"format-icons": {
 			"default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 			"plugged": "󰂄",
 			"charging": "󰂄",
 		},
 		"tooltip": true,
-		// "on-click": "~/.config/eww/scripts/toggle_menu.sh",
   },
 	// 󰸗 󰥔
 	"clock#date": {	
 		"format": "󰸗 {:%a, %b %d}",
-		"tooltip-format": "<big>{calendar}</big>"
+		"tooltip-format": "<big>{calendar}</big>",
 	},
-	"clock#time": {
-			"format": "󰥔 {:%H:%M}",
-			"tooltip": false,
-		},
-	}
+	// "clock#time": {
+	// 	"format": "󰥔 {:%H:%M %Z}",
+	// 	"timezone": "Asia/Novosibirsk",
+	// 	"tooltip": false,
+	// },
+	"custom/time": {
+		"format": "󰥔 {}",
+		"exec": "~/.config/waybar/custom/time.sh",
+		"tooltip": false,
+		"escape": true,
+	},
+}
