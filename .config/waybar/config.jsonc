@@ -17,8 +17,8 @@
 		"pulseaudio",
 		"battery",
 		"clock#date",
-		// "clock#time",
-		"custom/time",
+		"clock#time"
+		// "custom/time",
 	],
 
 	"hyprland/workspaces": {
@@ -128,11 +128,10 @@
 		"format": "󰸗 {:%a, %b %d}",
 		"tooltip-format": "<big>{calendar}</big>",
 	},
-	// "clock#time": {
-	// 	"format": "󰥔 {:%H:%M %Z}",
-	// 	"timezone": "Asia/Novosibirsk",
-	// 	"tooltip": false,
-	// },
+	"clock#time": {
+		"format": "󰥔 {:%H:%M GMT %Z}",
+		"tooltip": false,
+	},
 	"custom/time": {
 		"format": "󰥔 {}",
 		"exec": "~/.config/waybar/custom/time.sh",

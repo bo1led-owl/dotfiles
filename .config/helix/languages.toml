@@ -1,7 +1,7 @@
 [language-server.clangd]
 command = "clangd"
 args = [
-  # "--background-index",
+  "--background-index",
   "--header-insertion=never",
 ]
 

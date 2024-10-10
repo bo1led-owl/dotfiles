@@ -1,7 +1,7 @@
 #!/bin/bash
 
 date +"%H:%M"
-sleep $((60 - $(date +%S)))
+sleep $((60 - $(date +%S)))s
 
 while :
 do
