@@ -125,7 +125,7 @@
   },
 	// 󰸗 󰥔
 	"clock#date": {	
-		"format": "󰸗 {:%a, %b %d}",
+		"format": "󰸗 {:%A, %b %d}",
 		"tooltip-format": "<big>{calendar}</big>",
 	},
 	"clock#time": {

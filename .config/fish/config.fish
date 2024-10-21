@@ -2,7 +2,7 @@ set fish_greeting
 
 if status is-interactive
     alias hx "helix --log /dev/null"
-    alias ls "ls --color=auto -h"
+    alias ls "ls --group-directories-first --color=auto -h"
     alias fzf "fzf --preview \"bat --color=always --style=numbers --line-range=:100 {}\""
 
     fish_add_path -g ~/bin
