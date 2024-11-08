@@ -8,7 +8,6 @@ cp -r ~/.config/helix ./.config/
 cp -r ~/.config/nvim ./.config/
 cp -r ~/.config/sway ./.config/
 cp -r ~/.config/hypr ./.config/
-cp -r ~/.config/wofi ./.config/
 cp -r ~/.config/tmux ./.config/
 cp -r ~/.config/waybar ./.config/
 cp -r ~/.config/fuzzel ./.config/
