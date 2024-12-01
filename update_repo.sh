@@ -1,11 +1,6 @@
-mkdir -p ./.config/nushell
-
-cp -r ~/.config/nushell/*.nu ./.config/nushell
 cp -r ~/.config/zsh/ ./.config/
-cp -r ~/.config/alacritty ./.config/
 cp -r ~/.config/foot ./.config/
 cp -r ~/.config/helix ./.config/
-cp -r ~/.config/nvim ./.config/
 cp -r ~/.config/sway ./.config/
 cp -r ~/.config/hypr ./.config/
 cp -r ~/.config/tmux ./.config/
