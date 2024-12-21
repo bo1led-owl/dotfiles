@@ -1,23 +1,12 @@
 set $disp1 eDP-1
-set $disp2 HDMI-A-1
 
-# Built-in monitor
 output $disp1 {
-	mode 1920x1080@59.984Hz
-	pos 160 1080
-	scale 1.2
-}
-
-# Second monitor
-output $disp2 {
-	mode 1920x1080@60Hz
+	# mode 1920x1280@59.984Hz
 	pos 0 0
+	scale 1
 }
 
-bindswitch lid:toggle exec swaymsg output $disp1 toggle
-
-# temporarily turning off primary display
-output $disp1 disable
+# bindswitch lid:toggle exec swaymsg output $disp1 toggle
 
 # Do not turn off monitors if a window is in fullscreen mode
 for_window [shell=".*"] inhibit_idle fullscreen

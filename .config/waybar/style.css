@@ -9,7 +9,6 @@
   color: #ebdbb2;
   box-shadow: none;
   text-shadow: none;
-  transition-duration: 0.3s;
   transition-property: background-color, background-image;
 }
 
@@ -100,22 +99,20 @@ tooltip label {
 #workspaces button {
   padding: 0 2px;
   border: none;
-  transition-duration: 0.3s;
 }
 
 #workspaces button:hover {
   background-color: #928374;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   background-color: #ebdbb2;
 }
 
-#workspaces button.active * {
+#workspaces button.focused * {
   color: #282828;
 }
 
-/*
 #workspaces button.urgent {
   background-color: #458588;
 }
@@ -123,4 +120,3 @@ tooltip label {
 #workspaces button.urgent * {
   color: #282828;
 }
-*/

@@ -15,33 +15,6 @@ bindsym XF86MonBrightnessUp exec \
 bindsym XF86MonBrightnessDown exec \
 	brightnessctl set 5%-
 
-bindsym --to-code $mod+p exec swaymsg output $disp1 disable
-bindsym --to-code $mod+o exec swaymsg output $disp1 enable
-
-# Screenshot configuration
-bindsym --to-code --release {
-	# capture the specified screen area
-	Print exec mkdir -p ~/Pictures/Screenshots && \
-	path=~/Pictures/Screenshots/$(date +"%d-%m-%Y-%H-%M-%S").png && \
-	slurp | grim -l 3 -g - $path && \
-	wl-copy < $path && \
-	notify-send "Screenshot saved"
-	
-	# capture the focused monitor
-	Shift+Print exec mkdir -p ~/Pictures/Screenshots && \
-	path=~/Pictures/Screenshots/$(date +"%d-%m-%Y-%H-%M-%S").png && \
-	grim -l 3 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $path && \
-	wl-copy < $path && \
-	notify-send "Screenshot of the focused display saved"  
-	
-	# capture all screens
-	Ctrl+Shift+Print exec mkdir -p ~/Pictures/Screenshots && \
-	path=~/Pictures/Screenshots/$(date +"%d-%m-%Y-%H-%M-%S").png && \
-	grim -l 3 $path && \
-	wl-copy < $path && \
-	notify-send "Screenshot of all displays saved"
-}
-
 bindsym --to-code $mod+Shift+c reload
 
 bindsym --to-code $mod+q kill
@@ -95,7 +68,7 @@ bindsym --to-code $mod+s scratchpad show
 
 bindsym --to-code $mod+f fullscreen
 
-bindsym --to-code $mod+r mode 'resize'
+# bindsym --to-code $mod+r mode 'resize'
 mode 'resize' {
     bindsym --to-code h resize shrink width 10px
     bindsym --to-code k resize grow height 10px

@@ -24,9 +24,9 @@ client.focused_inactive $background $background $foreground $background
 client.unfocused $background $background $foreground $background
 client.urgent $blue $blue $black $blue
 
-seat seat0 xcursor_theme Bibata-Modern-Classic 24
+seat seat0 xcursor_theme capitaine-cursors 32
 
-set $wallpaper ~/Pictures/Wallpapers/jkt_lrt_by_kyokazu_dcjy2wn.png
+set $wallpaper ~/Pictures/Wallpapers/work.png
 output * bg $wallpaper fill
 
 smart_borders off
@@ -35,5 +35,5 @@ default_border pixel 2
 default_floating_border pixel 2
 for_window [class=".*"]  border pixel 2
 for_window [app_id=".*"] border pixel 2
-gaps inner 2
-gaps outer 0
+gaps inner 0
+gaps outer 2
