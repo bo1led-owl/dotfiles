@@ -1,9 +1,9 @@
 font=FiraCode Nerd Font 13
 
-background-color=#282828ff
-text-color=#ebdbb2ff
+background-color=#0f0f0fff
+text-color=#e8e8e8ff
 
-border-color=#ebdbb2ff
+border-color=#e8e8e8ff
 border-radius=4
 
 anchor=top-center

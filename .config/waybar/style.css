@@ -3,10 +3,10 @@
   border: none;
   min-height: 0;
   margin: 0;
-  font-family: "FiraCode Nerd Font";
+  font-family: "Fira Code Nerd Font";
   font-size: 13px;
   font-weight: 700;
-  color: #ebdbb2;
+  color: #e8e8e8;
   box-shadow: none;
   text-shadow: none;
   transition-property: background-color, background-image;
@@ -18,7 +18,7 @@ button {
 }
 
 window#waybar {
-  background-color: #282828;
+  background-color: #0f0f0f;
 }
 
 .modules-right {
@@ -34,16 +34,8 @@ tooltip * {
   background-color: transparent;
   border: none;
   padding: 0 10px;
-  border-radius: 8px;
+  border-radius: 0px;
   font-weight: bold;
-}
-
-tooltip label {
-  background-color: #282828;
-  color: #d4be98;
-  margin: 0;
-  padding: 10px;
-  border: solid 2px #d4be98;
 }
 
 #scratchpad,
@@ -74,11 +66,6 @@ tooltip label {
   background-color: #458588;
 }
 
-#tray, #tray * {
-  background-color: #282828;  
-  color: #d4be98;
-}
-
 #network.wifi, #network.disconnected {
   padding-right: 14px;
 }
@@ -102,21 +89,25 @@ tooltip label {
 }
 
 #workspaces button:hover {
-  background-color: #928374;
+  background-color: #a4a4a4;
+}
+
+#workspaces button:hover * {
+  color: #0f0f0f;
 }
 
 #workspaces button.focused {
-  background-color: #ebdbb2;
+  background-color: #e8e8e8;
 }
 
 #workspaces button.focused * {
-  color: #282828;
+  color: #0f0f0f;
 }
 
-#workspaces button.urgent {
-  background-color: #458588;
-}
+/* #workspaces button.urgent { */
+  /* background-color: #458588; */
+/* } */
 
-#workspaces button.urgent * {
-  color: #282828;
-}
+/* #workspaces button.urgent * { */
+  /* color: #282828; */
+/* } */

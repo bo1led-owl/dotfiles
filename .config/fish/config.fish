@@ -6,7 +6,6 @@ if status is-interactive
     alias fzf "fzf --preview \"bat --color=always --style=numbers --line-range=:100 {}\""
 
     fish_add_path -g ~/bin
-    fish_add_path -g ~/.rustup
 end
 
 function fish_prompt

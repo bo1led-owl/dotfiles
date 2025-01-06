@@ -51,6 +51,7 @@
 	"sway/window": {
 		"max-length": 100,
 		"all-outputs": false,
+		"tooltip": false,
 	},
 	"custom/spotify": {
 		"exec": "~/.config/waybar/custom/spotify.sh",
@@ -104,11 +105,11 @@
   },
 	// 󰸗 󰥔
 	"clock#date": {	
-		"format": "󰸗 {:%A, %b %d}",
+		"format": "{:%A, %b %d}",
 		"tooltip-format": "<big>{calendar}</big>",
 	},
 	"clock#time": {
-		"format": "󰥔 {:%H:%M GMT %Z}",
+		"format": "{:%H:%M GMT %Z}",
 		"tooltip": false,
 	},
 }

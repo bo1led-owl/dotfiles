@@ -1,14 +1,14 @@
-set $foreground #ebdbb2
-set $background #282828
+set $foreground #d8d8d8
+set $background #0f0f0f
 
-set $black #282828
+set $black #0f0f0f
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
 set $blue #458588
 set $magenta #b16286
 set $cyan #689d6a
-set $white #a89984
+set $white #a8a8a8
 
 set $black_bright #928374
 set $red_bright #fb4934
@@ -17,16 +17,16 @@ set $yellow_bright #fabd2f
 set $blue_bright #83a598
 set $magenta_bright #d3869b
 set $cyan_bright #8ec07c
-set $white_bright #ebdbb2
+set $white_bright #d8d8d8
 
-client.focused $white_bright $foreground $black $white_bright
+client.focused $white $foreground $black $white
 client.focused_inactive $background $background $foreground $background
 client.unfocused $background $background $foreground $background
 client.urgent $blue $blue $black $blue
 
 seat seat0 xcursor_theme capitaine-cursors 32
 
-set $wallpaper ~/Pictures/Wallpapers/work.png
+set $wallpaper ~/Pictures/Wallpapers/sword.jpg
 output * bg $wallpaper fill
 
 smart_borders off

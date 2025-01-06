@@ -1,4 +1,4 @@
-theme = "gruvbox"
+theme = "term16_dark"
 
 [editor]
 mouse = true
