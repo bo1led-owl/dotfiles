@@ -26,14 +26,14 @@ window#waybar {
 }
 
 tooltip {
-  background-color: transparent;
-  border: none;
+  background-color: #0f0f0f;
+  border: solid 2px #d8d8d8;
 }
 
 tooltip * {
   background-color: transparent;
-  border: none;
-  padding: 0 10px;
+  border: solid #d8d8d8;
+  padding: 2 2px;
   border-radius: 0px;
   font-weight: bold;
 }
