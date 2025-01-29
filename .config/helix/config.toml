@@ -2,7 +2,7 @@ theme = "term16_dark"
 
 [editor]
 mouse = true
-auto-format = true
+auto-format = false
 cursorline = true
 line-number = "relative"
 insert-final-newline = false
@@ -34,7 +34,7 @@ select = "block"
 
 [editor.lsp]
 display-messages = true
-display-inlay-hints = true
+display-inlay-hints = false
 snippets = false
 
 [editor.statusline]

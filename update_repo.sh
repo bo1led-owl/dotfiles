@@ -6,13 +6,13 @@ cp -r ~/.config/hypr ./.config/
 cp -r ~/.config/tmux ./.config/
 cp -r ~/.config/waybar ./.config/
 cp -r ~/.config/fuzzel ./.config/
-cp -r ~/.config/bat ./.config/
 cp -r ~/.config/mako ./.config/
-cp -r ~/.config/fish ./.config/
 cp ~/.config/zls.json ./.config/
 cp -r ~/.config/neofetch ./.config/
+cp ~/bin/start-sway .
 
-cp ~/.zprofile .
+cp ~/.bash_profile .
+cp ~/.bashrc .
 cp -r ~/scripts .
 cp ~/.gdbinit .
 

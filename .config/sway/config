@@ -16,8 +16,6 @@ bar swaybar_command waybar
 
 xwayland enable
 
-workspace 1
-
 # Startup applications
 exec --no-startup-id wl-paste --type text --watch clipman store
 exec --no-startup-id mako
@@ -26,3 +24,4 @@ exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r

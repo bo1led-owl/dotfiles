@@ -1,7 +1,7 @@
 set $disp1 eDP-1
 
 output $disp1 {
-	mode 1920x1280@60.002Hz
+	mode 1920x1200
 	pos 0 0
 	scale 1
 }

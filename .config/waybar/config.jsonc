@@ -65,6 +65,7 @@
 	},
 	"sway/language": {
 		"format": "{shortDescription}",
+		"tooltip": false,
 	},
 	"network": {
 		"format-disabled": "",
@@ -105,11 +106,12 @@
   },
 	// 󰸗 󰥔
 	"clock#date": {	
-		"format": "{:%A, %b %d}",
-		"tooltip-format": "<big>{calendar}</big>",
+		"format": "{:%b %d}",
+		"tooltip": false,
+		// "tooltip-format": "<big>{calendar}</big>",
 	},
 	"clock#time": {
-		"format": "{:%H:%M GMT %Z}",
+		"format": "{:%R GMT %Z}",
 		"tooltip": false,
 	},
 }

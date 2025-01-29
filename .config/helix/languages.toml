@@ -26,13 +26,12 @@ name = "rust"
 '`' = '`'
 
 [[language]]
-name = "go"
-
-[[language]]
-name = "toml"
-auto-format = true
-
-[[language]]
 name = "zig"
 auto-format = false
 language-servers = [ { name = "zls", except-features = [ "inlay-hints" ] } ]
+
+[[language]]
+name = "haskell"
+file-types = ["hs"]
+formatter = { command = "stylish-haskell"}
+# indent = { tab-width = 4, unit = "    " }
