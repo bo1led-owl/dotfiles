@@ -9,8 +9,9 @@ cp -r ~/.config/fuzzel ./.config/
 cp -r ~/.config/mako ./.config/
 cp ~/.config/zls.json ./.config/
 cp -r ~/.config/neofetch ./.config/
-cp ~/bin/start-sway .
 
+cp /etc/tlp.conf .
+cp ~/bin/start-sway .
 cp ~/.bash_profile .
 cp ~/.bashrc .
 cp -r ~/scripts .
