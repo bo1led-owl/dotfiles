@@ -1,4 +1,4 @@
-theme = "term16_dark"
+theme = "term"
 
 [editor]
 mouse = true
@@ -34,7 +34,7 @@ select = "block"
 
 [editor.lsp]
 display-messages = true
-display-inlay-hints = false
+display-inlay-hints = true
 snippets = false
 
 [editor.statusline]
