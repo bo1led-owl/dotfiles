@@ -1,15 +1,15 @@
 set $disp1 eDP-1
 
 output $disp1 {
-	mode 1920x1200
+	mode 1920x1200@60.002Hz
 	pos 0 0
 	scale 1
 }
 # output HDMI-A-1 {
-# 	mode 3840x2160@60.000Hz
-#	pos 0 0
-#	scale 1
-# }
+# 	mode 1920x1080
+# 	pos 0 0
+# 	scale 1
+#  }
 # output $disp1 disable
 
 # bindswitch lid:toggle exec swaymsg output $disp1 toggle

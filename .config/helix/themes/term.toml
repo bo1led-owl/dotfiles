@@ -50,8 +50,8 @@
 "keyword" = "light-magenta"
 "keyword.control.exception" = "light-magenta"
 "keyword.directive" = "light-magenta"
-"keyword.operator" = { fg = "light-blue", modifiers = ["bold"] }
-"label" = "light-green"
+"keyword.operator" = { fg = "light-magenta", modifiers = ["bold"] }
+"label" = "light-magenta"
 "namespace" = { fg = "white" }
 
 "markup.heading" = "light-blue"

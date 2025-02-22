@@ -5,6 +5,9 @@ args = [
   "--header-insertion=never",
 ]
 
+[language-server.haskell-language-server.config]
+haskell = { formattingProvider = "stylish-haskell" }
+
 [[language]]
 name = "cpp"
 file-types = ["cpp", "hpp", "cc", "hh"]
@@ -16,22 +19,11 @@ file-types = ["c", "h"]
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
-name = "rust"
-
-[language.auto-pairs]
-'(' = ')'
-'{' = '}'
-'[' = ']'
-'"' = '"'
-'`' = '`'
-
-[[language]]
 name = "zig"
 auto-format = false
 language-servers = [ { name = "zls", except-features = [ "inlay-hints" ] } ]
 
 [[language]]
-name = "haskell"
-file-types = ["hs"]
-formatter = { command = "stylish-haskell"}
-# indent = { tab-width = 4, unit = "    " }
+name = "latex"
+file-types = ["tex"]
+indent = { tab-width = 4, unit = "    " }
