@@ -7,7 +7,6 @@ cp -r ~/.config/tmux ./.config/
 cp -r ~/.config/waybar ./.config/
 cp -r ~/.config/fuzzel ./.config/
 cp -r ~/.config/mako ./.config/
-cp ~/.config/zls.json ./.config/
 cp -r ~/.config/neofetch ./.config/
 
 cp /etc/tlp.conf .

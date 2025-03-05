@@ -6,7 +6,7 @@ args = [
 ]
 
 [language-server.haskell-language-server.config]
-haskell = { formattingProvider = "stylish-haskell" }
+# haskell = { formattingProvider = "stylish-haskell" }
 
 [[language]]
 name = "cpp"
@@ -26,4 +26,4 @@ language-servers = [ { name = "zls", except-features = [ "inlay-hints" ] } ]
 [[language]]
 name = "latex"
 file-types = ["tex"]
-indent = { tab-width = 4, unit = "    " }
+indent = { tab-width = 2, unit = "  " }
