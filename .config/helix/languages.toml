@@ -3,7 +3,7 @@ command = "clangd"
 args = [
   "--background-index",
   "--header-insertion=never",
-]
+ ]
 
 [language-server.haskell-language-server.config]
 # haskell = { formattingProvider = "stylish-haskell" }
@@ -12,6 +12,10 @@ args = [
 name = "cpp"
 file-types = ["cpp", "hpp", "cc", "hh"]
 indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "scala"
+# file-types = ["scala", "sc", "sbt"]
 
 [[language]]
 name = "c"

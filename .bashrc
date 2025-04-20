@@ -11,3 +11,4 @@ alias ls='ls --group-directories-first --color=auto -h'
 alias mpv='mpv --no-audio-display --volume=50 --loop-playlist=inf'
 
 [ -f "/home/bo1led-owl/.ghcup/env" ] && . "/home/bo1led-owl/.ghcup/env" # ghcup-env
+. "$HOME/.cargo/env"

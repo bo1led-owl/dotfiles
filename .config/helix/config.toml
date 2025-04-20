@@ -14,10 +14,10 @@ color-modes = true
 true-color = true 
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 rulers = [80]
-end-of-line-diagnostics = "hint"
+# end-of-line-diagnostics = "hint"
 
-[editor.inline-diagnostics]
-cursor-line = "warning"
+# [editor.inline-diagnostics]
+# cursor-line = "error"
 
 [editor.file-picker]
 hidden = false

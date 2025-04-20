@@ -43,16 +43,16 @@
 "type.builtin" = { fg = "blue", modifiers = ["bold"] }
 "type.enum.variant" = { fg = "blue" }
 "string"  = "light-green"
-"special" = "light-red"
+"special" = "blue"
 "variable" = "white"
 "variable.parameter" = { fg = "white", modifiers = ["italic"] }
 "variable.other.member" = "white"
 "keyword" = "light-magenta"
 "keyword.control.exception" = "light-magenta"
 "keyword.directive" = "light-magenta"
-"keyword.operator" = { fg = "light-magenta", modifiers = ["bold"] }
+"keyword.operator" = "blue"
 "label" = "light-magenta"
-"namespace" = { fg = "white" }
+"namespace" = "white"
 
 "markup.heading" = "light-blue"
 "markup.list" = "light-red"

@@ -1,5 +1,6 @@
 cp -r ~/.config/zsh/ ./.config/
 cp -r ~/.config/foot ./.config/
+cp -r ~/.config/fish ./.config/
 cp -r ~/.config/helix ./.config/
 cp -r ~/.config/sway ./.config/
 cp -r ~/.config/hypr ./.config/
