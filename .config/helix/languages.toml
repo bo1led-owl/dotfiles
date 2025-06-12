@@ -6,16 +6,12 @@ args = [
  ]
 
 [language-server.haskell-language-server.config]
-# haskell = { formattingProvider = "stylish-haskell" }
+# haskell = { formattingProvider = "ormolu" }
 
 [[language]]
 name = "cpp"
 file-types = ["cpp", "hpp", "cc", "hh"]
 indent = { tab-width = 4, unit = "    " }
-
-[[language]]
-name = "scala"
-# file-types = ["scala", "sc", "sbt"]
 
 [[language]]
 name = "c"

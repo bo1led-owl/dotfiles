@@ -8,7 +8,7 @@ if status is-interactive
     alias objdump "objdump -M intel"
 
     fish_add_path -g ~/bin
-    set -gx EDITOR "hx"
+    set -gx EDITOR "helix"
     set -gx CC "clang"
     set -gx CXX "clang++"
 end

@@ -9,7 +9,7 @@ exec_always swayidle -w \
     resume 'swaymsg "output * dpms on"' \
 	timeout 900 'systemctl suspend'
 
-set $terminal foot
+set $terminal alacritty
 set $launcher fuzzel
 
 bar swaybar_command waybar

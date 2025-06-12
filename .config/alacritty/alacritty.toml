@@ -1,0 +1,43 @@
+[terminal.shell]
+program = "fish"
+
+[window]
+decorations = "none"
+opacity = 0.9
+title = "Terminal"
+dynamic_title = false
+padding = { x = 4, y = 8 }
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#312e30"
+blue = "#8e9cc0"
+cyan = "#7aa880"
+green = "#96a42d"
+magenta = "#d58888"
+red = "#c43526"
+white = "#aeadaf"
+yellow = "#d7d044"
+
+[colors.normal]
+black = "#232323"
+blue = "#6e9cb0"
+cyan = "#6da280"
+green = "#8c9e3d"
+magenta = "#b58d88"
+red = "#ad4135"
+white = "#949d9f"
+yellow = "#c4be3c"
+
+[colors.primary]
+background = "#0f0f0f"
+foreground = "#d8d8d8"
+
+[font]
+size = 19
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Medium"
