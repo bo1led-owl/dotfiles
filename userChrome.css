@@ -3,9 +3,9 @@
 /* Screenshot at https://feed.grantcuster.com/post/1596224341/ */
 
 :root {
-  --bg: #282828;
-  --hover-bg: #928374;
-  --fg: #ebdbb2;
+  --bg: #0f0f0f;
+  --hover-bg: #848484;
+  --fg: #e2e2e2;
 }
 
 #navigator-toolbox #toolbar-menubar, 
@@ -14,11 +14,11 @@
 #navigator-toolbox #pageActionButton,
 #navigator-toolbox #identity-box
 {
-  display: none;
+  /* display: none; */
 }
 
 #navigator-toolbox {
-  font-family: 'Montserrat' !important;
+  font-family: 'Helvetica' !important;
   font-size: 13px;
   line-height: 16px;
   font-weight: 600;
@@ -30,7 +30,7 @@
   display: none;
 }
 #navigator-toolbox .tab-line {
-  display: none;
+  /* display: none; */
 }
 #navigator-toolbox #urlbar-container {
   padding: 0 !important;
@@ -54,7 +54,7 @@
   padding-left: 6px !important;
 }
 #navigator-toolbox #tracking-protection-icon-container {
-  display: none;
+  /* display: none; */
 }
 #navigator-toolbox #urlbar-zoom-button {
   border: none !important;
@@ -95,10 +95,10 @@
   background: var(--hover-bg) !important;
 }
 #navigator-toolbox .tab-background .tab-line {
-  display: none;
+  /* display: none; */
 }
 #navigator-toolbox .tabbrowser-tab::after {
-  display: none !important;
+  /* display: none !important; */
 }
 #navigator-toolbox .tab-icon-image {
   margin-top: 0 !important;

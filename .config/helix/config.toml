@@ -13,11 +13,11 @@ completion-replace = false
 color-modes = true
 true-color = true 
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
-rulers = [80]
-# end-of-line-diagnostics = "hint"
+# rulers = [80]
+end-of-line-diagnostics = "hint"
 
-# [editor.inline-diagnostics]
-# cursor-line = "error"
+[editor.inline-diagnostics]
+cursor-line = "hint"
 
 [editor.file-picker]
 hidden = false
