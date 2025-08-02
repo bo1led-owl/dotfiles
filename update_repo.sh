@@ -11,6 +11,7 @@ cp -r ~/.config/waybar ./.config/
 cp -r ~/.config/fuzzel ./.config/
 cp -r ~/.config/mako ./.config/
 cp -r ~/.config/neofetch ./.config/
+cp -r ~/.config/btop/btop.conf ./.config/btop
 
 cp /etc/tlp.conf .
 cp ~/bin/start-sway .
