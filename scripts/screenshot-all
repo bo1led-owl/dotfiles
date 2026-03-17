@@ -1,5 +1,5 @@
 mkdir -p ~/Pictures/Screenshots && \
 	path=~/Pictures/Screenshots/$(date +"%Y-%m-%d-%H-%M-%S").png && \
-	slurp | grim -l 4 -g - $path && \
+	grim -l 4 $path && \
 	wl-copy < $path && \
-	notify-send "Screenshot saved"
+	notify-send "Screenshot of all displays saved"

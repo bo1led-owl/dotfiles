@@ -11,6 +11,8 @@ if status is-interactive
     set -gx EDITOR "helix"
     set -gx CC "clang"
     set -gx CXX "clang++"
+    set -gx CC_LD "mold"
+    set -gx CXX_LD "mold"
 end
 
 function fish_prompt

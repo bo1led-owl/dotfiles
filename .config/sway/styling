@@ -29,7 +29,7 @@ seat seat0 xcursor_theme capitaine-cursors 32
 set $wallpaper ~/Pictures/Wallpapers/sword.jpg
 output * bg $wallpaper fill
 
-smart_borders off
+smart_borders on
 smart_gaps off
 default_border pixel 2
 default_floating_border pixel 2

@@ -26,7 +26,7 @@
 "ui.virtual.inlay-hint.type" = { fg = "light-gray", modifiers = ["dim", "italic"] }
 "ui.window" = { fg = "gray", modifiers = ["dim"] }
 
-"comment" = { fg = "light-gray", modifiers = ["italic", "dim"] }
+"comment" = { fg = "light-gray", modifiers = ["dim"] }
 
 "attribute" = "light-yellow"
 "constant" = { fg = "light-cyan", modifiers = ["bold"] }

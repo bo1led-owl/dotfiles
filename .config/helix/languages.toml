@@ -3,10 +3,8 @@ command = "clangd"
 args = [
   "--background-index",
   "--header-insertion=never",
+  "-j=8",
  ]
-
-[language-server.haskell-language-server.config]
-# haskell = { formattingProvider = "ormolu" }
 
 [[language]]
 name = "cpp"
@@ -26,4 +24,19 @@ language-servers = [ { name = "zls", except-features = [ "inlay-hints" ] } ]
 [[language]]
 name = "latex"
 file-types = ["tex"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "java"
+scope = "source.java"
+file-types = ["java"]
+roots = ["pom.xml", "build.gradle", "build.gradle.kts", ".gradle", "gradlew"]
+language-servers = ["jdtls"]
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "scala"
+file-types = ["scala", "sc", "sbt"]
+# roots = ["build.sbt", "."]
+language-servers = ["metals"]
 indent = { tab-width = 2, unit = "  " }

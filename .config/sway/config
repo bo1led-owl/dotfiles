@@ -1,3 +1,4 @@
+include env
 include styling
 include output
 include input
@@ -16,12 +17,18 @@ bar swaybar_command waybar
 
 xwayland enable
 
-# Startup applications
-exec --no-startup-id wl-paste --type text --watch clipman store
-exec --no-startup-id mako
-exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+exec wl-paste --type text --watch clipman store
+exec mako
+exec /usr/lib/polkit-kde-authentication-agent-1
 
-exec --no-startup-id systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-exec --no-startup-id hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
-exec --no-startup-id /usr/lib/xdg-desktop-portal -r
+exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
+exec systemctl --user import-environment DISPLAY \
+                                         SWAYSOCK \
+                                         WAYLAND_DISPLAY \
+                                         XDG_CURRENT_DESKTOP
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY \
+                                                  SWAYSOCK \
+                                                  XDG_CURRENT_DESKTOP=sway \
+                                                  WAYLAND_DISPLAY

@@ -96,11 +96,11 @@ tooltip * {
   color: #0f0f0f;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
   background-color: #e8e8e8;
 }
 
-#workspaces button.focused * {
+#workspaces button.active * {
   color: #0f0f0f;
 }
 

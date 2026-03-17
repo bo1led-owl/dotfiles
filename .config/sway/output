@@ -1,6 +1,6 @@
 output eDP-1 {
 	mode 1920x1200@60.002Hz
-	pos 1920 750
+	pos 0 1080
 	scale 1
 }
 output HDMI-A-1 {
