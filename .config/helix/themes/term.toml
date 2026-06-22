@@ -1,4 +1,4 @@
-"ui.background" = { }
+"ui.background" = {}
 "ui.background.separator" = { fg = "white" }
 "ui.cursor" = { fg = "light-gray", modifiers = ["reversed"] }
 "ui.cursor.match" = { fg = "light-yellow", modifiers = ["reversed"] }

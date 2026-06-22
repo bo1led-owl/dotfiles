@@ -37,6 +37,5 @@ indent = { tab-width = 4, unit = "    " }
 [[language]]
 name = "scala"
 file-types = ["scala", "sc", "sbt"]
-# roots = ["build.sbt", "."]
 language-servers = ["metals"]
 indent = { tab-width = 2, unit = "  " }

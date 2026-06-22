@@ -24,3 +24,8 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; se
 # >>> coursier install directory >>>
 set -gx PATH "$PATH:/home/bo1led-owl/.local/share/coursier/bin"
 # <<< coursier install directory <<<
+
+# for idris
+set -gx PATH "$PATH:/home/bo1led-owl/.local/bin"
+
+# ulimit -m 12582912
