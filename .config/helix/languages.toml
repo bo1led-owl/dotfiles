@@ -39,3 +39,15 @@ name = "scala"
 file-types = ["scala", "sc", "sbt"]
 language-servers = ["metals"]
 indent = { tab-width = 2, unit = "  " }
+
+# [[language]]
+# name = "idris"
+# scope = "source.idris"
+# injection-regex = "idris"
+# file-types = ["idr", "lidr"]
+# comment-token = "--"
+# roots = []
+
+[[grammar]]
+name = "idris"
+source = { git = "https://github.com/kayhide/tree-sitter-idris", rev = "c3ab3a95415d9807038f6ed026617cb44328f1c3" }
