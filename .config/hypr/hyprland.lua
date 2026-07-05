@@ -42,7 +42,7 @@ hl.config({
   },
   input = {
     kb_layout = "us,ru",
-    kb_options = "grp:alt_shift_toggle",
+    kb_options = "grp:alt_shift_toggle,caps:escape",
     numlock_by_default = true,
     follow_mouse = 2,
     float_switch_override_focus = 0,
@@ -117,6 +117,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("CTRL + Space", hl.dsp.exec_cmd(launcher))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"}))
+hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/scripts/mirror"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("killall " .. bar))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(bar))
