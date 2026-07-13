@@ -1,6 +1,13 @@
 hl.monitor({
   output   = "eDP-1",
   mode     = "1920x1200",
+  position = "0x1080",
+  scale    = 1,
+})
+
+hl.monitor({
+  output   = "HDMI-A-1",
+  mode     = "1920x1080",
   position = "0x0",
   scale    = 1,
 })
@@ -46,7 +53,8 @@ hl.config({
     numlock_by_default = true,
     follow_mouse = 2,
     float_switch_override_focus = 0,
-    accel_profile = "flat",
+    -- accel_profile = "custom 0",
+    force_no_accel = true,
     sensitivity = 0,
     scroll_factor = 1,
     touchpad = {
@@ -57,6 +65,9 @@ hl.config({
   },
   decoration = {
     rounding = 0,
+    shadow = {
+      enabled = false,
+    },
     blur = {
       enabled = false,
     },
@@ -72,13 +83,13 @@ hl.config({
     disable_hyprland_logo = true,
     mouse_move_enables_dpms = true,
     key_press_enables_dpms = true,
-    mouse_move_focuses_monitor = true,
+    mouse_move_focuses_monitor = false,
   }
 })
 
 hl.device({
   name = "ftcs1000:00-2808:0105-touchpad",
-  sensitivity = 0.8,
+  sensitivity = 1,
 })
 
 hl.gesture({
@@ -106,17 +117,19 @@ hl.window_rule({
   match = { fullscreen = true },
   idle_inhibit = "fullscreen",
 })
-hl.window_rule({
-  match = { workspace = "w[t1]" },
-  border_size = 0,
-})
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
+hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind("CTRL + Space", hl.dsp.exec_cmd(launcher))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"}))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/scripts/mirror"))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("killall " .. bar))
@@ -135,21 +148,21 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"))
 hl.bind("Print", hl.dsp.exec_cmd("~/scripts/screenshot"))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("~/scripts/screenshot_all"))
 
-hl.bind(mainMod .. " + j", hl.dsp.focus({direction = "d"}))
-hl.bind(mainMod .. " + k", hl.dsp.focus({direction = "u"}))
-hl.bind(mainMod .. " + h", hl.dsp.focus({direction = "l"}))
-hl.bind(mainMod .. " + l", hl.dsp.focus({direction = "r"}))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "d" }))
+hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
+hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
 
-hl.bind(mainMod .. " + 1", hl.dsp.focus({workspace = 1}))
-hl.bind(mainMod .. " + 2", hl.dsp.focus({workspace = 2}))
-hl.bind(mainMod .. " + 3", hl.dsp.focus({workspace = 3}))
-hl.bind(mainMod .. " + 4", hl.dsp.focus({workspace = 4}))
-hl.bind(mainMod .. " + 5", hl.dsp.focus({workspace = 5}))
-hl.bind(mainMod .. " + 6", hl.dsp.focus({workspace = 6}))
-hl.bind(mainMod .. " + 7", hl.dsp.focus({workspace = 7 }))
-hl.bind(mainMod .. " + 8", hl.dsp.focus({workspace = 8}))
-hl.bind(mainMod .. " + 9", hl.dsp.focus({workspace = 9}))
-hl.bind(mainMod .. " + 0", hl.dsp.focus({workspace = 10}))
+hl.bind(mainMod .. " + 1", hl.dsp.focus({ workspace = 1 }))
+hl.bind(mainMod .. " + 2", hl.dsp.focus({ workspace = 2 }))
+hl.bind(mainMod .. " + 3", hl.dsp.focus({ workspace = 3 }))
+hl.bind(mainMod .. " + 4", hl.dsp.focus({ workspace = 4 }))
+hl.bind(mainMod .. " + 5", hl.dsp.focus({ workspace = 5 }))
+hl.bind(mainMod .. " + 6", hl.dsp.focus({ workspace = 6 }))
+hl.bind(mainMod .. " + 7", hl.dsp.focus({ workspace = 7 }))
+hl.bind(mainMod .. " + 8", hl.dsp.focus({ workspace = 8 }))
+hl.bind(mainMod .. " + 9", hl.dsp.focus({ workspace = 9 }))
+hl.bind(mainMod .. " + 0", hl.dsp.focus({ workspace = 10 }))
 
 hl.bind(mainMod .. " + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
 hl.bind(mainMod .. " + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
@@ -162,15 +175,15 @@ hl.bind(mainMod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
 hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l"}))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r"}))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u"}))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d"}))
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
 
-hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 25, y = 0}))
-hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -25, y = 0}))
-hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -25}))
-hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = 25}))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 25, y = 0 }))
+hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -25, y = 0 }))
+hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = -25 }))
+hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = 25 }))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag())
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
