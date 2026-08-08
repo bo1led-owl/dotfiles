@@ -31,7 +31,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("wl-paste --type text --watch clipman store")
   hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
   hl.exec_cmd("hyprctl setcursscale: 1.5,or capitaine-cursors 32")
-  hl.exec_cmd("~/.config/hypr/scripts/idle")
+  hl.exec_cmd("hypridle")
   hl.exec_cmd("systemctl --user import-environment XDG_CURRENT_DESKTOP XDG_SESSION_TYPE")
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
@@ -100,23 +100,12 @@ hl.gesture({
 })
 
 hl.window_rule({
-  match = { class = "firefox" },
-  workspace = 1,
-})
-hl.window_rule({
   match = { class = "^(showmethekey-gtk)(.*)$" },
   float = true,
   pin = true,
   border_size = 0,
 })
-hl.window_rule({
-  match = { title = "Telegram" },
-  workspace = 3,
-})
-hl.window_rule({
-  match = { fullscreen = true },
-  idle_inhibit = "fullscreen",
-})
+hl.window_rule({ match = { fullscreen = true }, idle_inhibit = "fullscreen" })
 hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
 hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 0 })
